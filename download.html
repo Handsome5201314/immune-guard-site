@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>下载 · 生命方程 免疫卫士</title>
+<meta name="description" content="下载免疫卫士 App。版本信息与更新日志自动同步自 GitHub Release，提供最新 APK 与历史版本。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Crect%20width='24'%20height='24'%20rx='6'%20fill='%2310B981'/%3E%3Cpath%20d='M12%205l5.5%202v4c0%203.4-2.2%205.8-5.5%207.5C8.7%2016.8%206.5%2014.4%206.5%2011V7z'%20fill='none'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --green:#10B981;--green-dark:#059669;--green-bg:#ECFDF5;--green-border:#A7F3D0;--green-ink:#047857;
+  --ink:#0F172A;--ink-2:#64748B;--ink-3:#94A3B8;
+  --line:#E2E8F0;--bg-tint:#F8FAFC;--card:#FFFFFF;--bg-page:#FFFFFF;
+  --amber:#F59E0B;--amber-bg:#FEF3C7;--amber-ink:#B45309;
+  --shadow:0 4px 16px rgba(15,23,42,.06);
+  --r-card:20px;--r-small:16px;--r-btn:14px;--nav-h:76px;
+  --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg-page);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3,h4,p,ul{margin:0}
+ul{padding:0;list-style:none}
+.container{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
+
+/* 导航 */
+.site-header{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:600;letter-spacing:.01em}
+.brand-mark{width:28px;height:28px;border-radius:8px;background:var(--green);display:inline-flex;align-items:center;justify-content:center;flex:none}
+.brand-mark svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-link{font-size:15px;color:var(--ink-2);text-decoration:none;transition:color .15s}
+.nav-link:hover{color:var(--ink)}
+.nav-link.is-current{color:var(--green-ink);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border:0;font-family:inherit;cursor:pointer;transition:background .15s,transform .15s}
+.btn-primary{background:var(--green);color:#fff;border-radius:var(--r-btn);font-size:16px;font-weight:500;height:52px;padding:0 26px}
+.btn-primary:hover{background:var(--green-dark)}
+.btn-pill{background:var(--green);color:#fff;border-radius:999px;font-size:15px;height:40px;padding:0 20px}
+.btn-pill:hover{background:var(--green-dark)}
+.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* 首屏 */
+.dl-hero{padding:72px 0 56px}
+.dl-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:56px;align-items:start}
+.eyebrow{display:inline-flex;align-items:center;background:var(--green-bg);border:1px solid var(--green-border);color:var(--green-ink);font-size:14px;border-radius:999px;padding:6px 16px;line-height:1.6}
+.dl-hero h1{margin:20px 0 16px;font-size:52px;font-weight:600;line-height:1.18;letter-spacing:-.02em}
+.dl-hero .lead{font-size:17px;color:var(--ink-2);max-width:520px}
+.dl-meta{display:flex;flex-wrap:wrap;gap:10px 20px;margin:26px 0 30px;font-size:14px;color:var(--ink-3)}
+.dl-meta span{display:inline-flex;align-items:center;gap:6px}
+.dl-meta svg{width:15px;height:15px;stroke:var(--ink-3);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.dl-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.btn-ghost{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:var(--r-btn);font-size:16px;height:52px;padding:0 22px}
+.btn-ghost:hover{border-color:var(--ink-3)}
+.dl-note{margin-top:18px;font-size:13px;line-height:1.7;color:var(--ink-3);max-width:520px}
+
+/* 版本卡 */
+.version-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--shadow);padding:28px}
+.version-card .vc-label{font-size:13px;color:var(--ink-3)}
+.version-card .vc-ver{margin:8px 0 4px;font-size:40px;font-weight:600;line-height:1.1;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.version-card .vc-date{font-size:13px;color:var(--ink-2)}
+.vc-rows{margin-top:22px;border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:12px}
+.vc-row{display:flex;align-items:center;justify-content:space-between;font-size:14px}
+.vc-row dt{color:var(--ink-3)}
+.vc-row dd{margin:0;color:var(--ink);font-variant-numeric:tabular-nums}
+.vc-hash{margin-top:14px;font-size:11px;line-height:1.6;color:var(--ink-3);word-break:break-all;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+/* 状态 */
+.state{padding:18px 20px;border-radius:var(--r-small);font-size:14px;line-height:1.7;display:none}
+.state.is-on{display:block}
+.state-loading{background:var(--bg-tint);color:var(--ink-2)}
+.state-error{background:var(--amber-bg);color:var(--amber-ink)}
+
+/* 分段 */
+.section{padding:72px 0}
+.section-tint{background:var(--bg-tint)}
+.section-head h2{font-size:36px;font-weight:600;line-height:1.25;letter-spacing:-.01em}
+.section-head p{margin-top:12px;font-size:16px;color:var(--ink-2);max-width:620px}
+.section-head{margin-bottom:32px}
+
+/* 更新日志 */
+.release{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:28px;margin-bottom:16px}
+.release-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;margin-bottom:8px}
+.release-ver{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
+.release-tag{font-size:12px;color:var(--green-ink);background:var(--green-bg);border:1px solid var(--green-border);border-radius:999px;padding:2px 10px;line-height:1.7}
+.release-date{font-size:13px;color:var(--ink-3)}
+.release-body{margin-top:14px;font-size:15px;color:var(--ink-2)}
+.release-body h3{margin:18px 0 8px;font-size:16px;font-weight:600;color:var(--ink)}
+.release-body h4{margin:16px 0 6px;font-size:15px;font-weight:600;color:var(--ink)}
+.release-body h3:first-child,.release-body h4:first-child{margin-top:0}
+.release-body p{margin:8px 0}
+.release-body ul{margin:8px 0;display:flex;flex-direction:column;gap:6px}
+.release-body li{position:relative;padding-left:16px}
+.release-body li::before{content:"";position:absolute;left:0;top:.68em;width:5px;height:5px;border-radius:50%;background:var(--green-border)}
+.release-body strong{color:var(--ink);font-weight:600}
+.release-body code{background:var(--bg-tint);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.release-body hr{border:0;border-top:1px solid var(--line);margin:18px 0}
+.release-more{margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.release-more .btn-ghost{height:44px;font-size:15px}
+
+/* 安装步骤 */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:26px}
+.step-no{width:32px;height:32px;border-radius:50%;background:var(--green-bg);color:var(--green-ink);display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
+.step h3{margin:16px 0 8px;font-size:18px;font-weight:600}
+.step p{font-size:15px;color:var(--ink-2)}
+
+/* FAQ */
+.faq{display:flex;flex-direction:column;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
+.faq details{background:var(--card);padding:0}
+.faq summary{cursor:pointer;padding:20px 24px;font-size:16px;font-weight:500;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:20px;color:var(--ink-3);line-height:1;font-weight:400}
+.faq details[open] summary::after{content:"−"}
+.faq .faq-body{padding:0 24px 22px;font-size:15px;color:var(--ink-2)}
+
+/* 页脚 */
+.site-footer{background:var(--bg-tint);border-top:1px solid var(--line);padding:56px 0 32px;margin-top:24px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+.footer-brand p{margin-top:14px;font-size:13px;line-height:1.8;color:var(--ink-2);max-width:300px}
+.footer-col h4{font-size:13px;font-weight:600;color:var(--ink-3);letter-spacing:.04em;margin-bottom:14px}
+.footer-col a{display:block;font-size:14px;color:var(--ink-2);text-decoration:none;padding:6px 0}
+.footer-col a:hover{color:var(--ink)}
+.footer-bottom{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 28px;font-size:12px;color:var(--ink-3)}
+
+/* 骨架 */
+.sk{background:var(--bg-tint);border-radius:8px;height:1em;animation:sk 1.4s ease-in-out infinite}
+@keyframes sk{0%,100%{opacity:.65}50%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.sk{animation:none}}
+
+@media (max-width:1023px){
+  .dl-hero-grid{grid-template-columns:minmax(0,1fr);gap:36px}
+  .version-card{max-width:420px}
+  .dl-hero h1{font-size:44px}
+  .steps{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+}
+@media (max-width:899px){
+  .nav-right .nav-link{display:none}
+  .section{padding:56px 0}
+  .section-head h2{font-size:30px}
+}
+@media (max-width:639px){
+  .container{padding-left:20px;padding-right:20px}
+  .dl-hero{padding:40px 0 36px}
+  .dl-hero h1{font-size:36px}
+  .dl-hero .lead{font-size:16px}
+  .btn-primary,.btn-ghost{width:100%}
+  .dl-actions{gap:12px}
+  .version-card{padding:22px}
+  .version-card .vc-ver{font-size:34px}
+  .release{padding:20px}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4l6 2.2v4.6c0 3.8-2.5 6.4-6 8.2-3.5-1.8-6-4.4-6-8.2V6.2L12 4z"/></svg></span>
+      生命方程 · 免疫卫士
+    </a>
+    <div class="nav-right">
+      <a class="nav-link" href="index.html">首页</a>
+      <a class="nav-link" href="index.html#product">产品</a>
+      <a class="nav-link" href="index.html#science">科学</a>
+      <a class="nav-link is-current" href="download.html" aria-current="page">下载</a>
+      <a class="btn btn-pill" href="index.html#contact">预约体验</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- 下载首屏 -->
+  <section class="dl-hero">
+    <div class="container dl-hero-grid">
+      <div>
+        <span class="eyebrow">Android 客户端</span>
+        <h1>下载免疫卫士</h1>
+        <p class="lead">把免疫力变成一条可追踪、可解释、可行动的曲线。版本信息与更新日志自动同步自 GitHub Release。</p>
+
+        <div class="dl-meta" id="dl-meta">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg><span id="meta-size">—</span></span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v4M16 3v4M4 10h16"/></svg><span id="meta-date">—</span></span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M11 18h2"/></svg>Android 8.0 及以上</span>
+        </div>
+
+        <div class="dl-actions">
+          <a class="btn btn-primary" id="dl-primary" href="#" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
+            下载 APK
+          </a>
+          <a class="btn btn-ghost" id="dl-github" href="#" target="_blank" rel="noopener noreferrer">查看全部版本</a>
+        </div>
+
+        <p class="dl-note">安装时系统会提示「未知来源应用」，需在设置中允许浏览器安装应用。本页只提供安装包，App 内的健康解读内容仅供参考，不能替代临床诊断。</p>
+      </div>
+
+      <aside class="version-card" aria-live="polite">
+        <p class="vc-label">最新版本</p>
+        <p class="vc-ver" id="vc-ver">—</p>
+        <p class="vc-date" id="vc-date">正在获取版本信息…</p>
+        <dl class="vc-rows">
+          <div class="vc-row"><dt>安装包大小</dt><dd id="vc-size">—</dd></div>
+          <div class="vc-row"><dt>发布时间</dt><dd id="vc-published">—</dd></div>
+          <div class="vc-row"><dt>下载次数</dt><dd id="vc-downloads">—</dd></div>
+        </dl>
+        <p class="vc-hash" id="vc-hash"></p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 更新日志 -->
+  <section class="section section-tint" id="changelog">
+    <div class="container">
+      <div class="section-head">
+        <h2>更新日志</h2>
+        <p>每一条都来自发布说明原文，随 Release 自动同步。</p>
+      </div>
+      <div class="state state-loading is-on" id="log-state">正在从 GitHub 获取版本记录…</div>
+      <div id="release-list"></div>
+      <div class="release-more">
+        <a class="btn btn-ghost" id="dl-github-2" href="#" target="_blank" rel="noopener noreferrer">在 GitHub 查看完整历史</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 安装步骤 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>三步装好</h2>
+        <p>安卓手机直接安装，不需要应用商店。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-no">1</span>
+          <h3>下载安装包</h3>
+          <p>点击「下载 APK」，文件约 50–70MB。请用手机浏览器下载，微信内置浏览器可能拦截。</p>
+        </div>
+        <div class="step">
+          <span class="step-no">2</span>
+          <h3>允许安装</h3>
+          <p>打开文件时系统提示「未知来源」，进入设置允许该浏览器安装应用，再返回继续。</p>
+        </div>
+        <div class="step">
+          <span class="step-no">3</span>
+          <h3>连接设备</h3>
+          <p>首次打开按引导授权蓝牙，扫描戒指或手环完成配对，即可开始夜间采集。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head"><h2>常见问题</h2></div>
+      <div class="faq">
+        <details>
+          <summary>为什么不在应用商店上架？</summary>
+          <div class="faq-body">当前处于内测阶段，采用独立安装包分发，便于快速迭代。正式版本将按渠道要求提交审核。</div>
+        </details>
+        <details>
+          <summary>安装后提示「解析包错误」怎么办？</summary>
+          <div class="faq-body">多数是下载不完整。请删除文件后重新下载，并核对页面显示的安装包大小是否一致。</div>
+        </details>
+        <details>
+          <summary>iOS 能用吗？</summary>
+          <div class="faq-body">暂只提供 Android 版本。iOS 版本尚未发布，可先预约体验，上线后我们会通知。</div>
+        </details>
+        <details>
+          <summary>数据会上传吗？</summary>
+          <div class="faq-body">生理数据与报告用于生成你的趋势与解读，传输与存储均加密。具体范围与删除方式见隐私政策。</div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4l6 2.2v4.6c0 3.8-2.5 6.4-6 8.2-3.5-1.8-6-4.4-6-8.2V6.2L12 4z"/></svg></span>
+          生命方程 · 免疫卫士
+        </a>
+        <p>把免疫力变成一条可追踪、可解释、可行动的曲线。</p>
+      </div>
+      <div class="footer-col">
+        <h4>产品</h4>
+        <a href="index.html#product">功能</a>
+        <a href="index.html#hardware">硬件</a>
+        <a href="index.html#report">报告解读</a>
+        <a href="download.html">下载</a>
+      </div>
+      <div class="footer-col">
+        <h4>关于</h4>
+        <a href="index.html#science">科学</a>
+        <a href="index.html#contact">联系我们</a>
+        <a id="footer-github" href="#" target="_blank" rel="noopener noreferrer">GitHub Releases</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>本产品不提供诊断或治疗建议。所有解读内容仅供参考，不能替代临床诊断。</span>
+      <span>© 2026 生命方程 · 免疫卫士</span>
+      <span>京ICP备XXXXXXXX号</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* 公开分发仓库：只放 Release 与安装包，源码仓库保持私有 */
+  var SITE_REPO = "Handsome5201314/immune-guard-site";
+  var API = "https://api.github.com/repos/" + SITE_REPO + "/releases?per_page=8";
+  var GH_URL = "https://github.com/" + SITE_REPO + "/releases";
+
+  var el = function (id) { return document.getElementById(id); };
+
+  ["dl-github", "dl-github-2", "footer-github"].forEach(function (id) {
+    var a = el(id); if (a) a.href = GH_URL;
+  });
+
+  function fmtSize(bytes) {
+    if (!bytes || !isFinite(bytes)) return "—";
+    return (bytes / 1048576).toFixed(1) + " MB";
+  }
+  function fmtDate(iso) {
+    if (!iso) return "—";
+    var d = new Date(iso);
+    if (isNaN(d)) return "—";
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  function fmtNum(n) {
+    if (typeof n !== "number") return "—";
+    return n >= 10000 ? (n / 10000).toFixed(1) + " 万" : String(n);
+  }
+  function esc(t) {
+    return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function inline(t) {
+    return esc(t)
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>")
+      .replace(/\n/g, "<br>");
+  }
+  /* 极简 Markdown：只处理 Release 正文里实际出现的结构 */
+  function md(src) {
+    if (!src) return "<p>本次发布未提供说明。</p>";
+    var blocks = String(src).split(/\r?\n\s*\r?\n/);
+    /* 发布说明常以「## 版本标题」开头，卡片头部已显示版本，避免重复 */
+    if (blocks.length && /^##\s/.test(blocks[0].trim())) blocks.shift();
+    return blocks.map(function (block) {
+      var b = block.trim();
+      if (!b) return "";
+      if (/^---+$/.test(b)) return "<hr>";
+      if (/^###\s/.test(b)) return "<h4>" + inline(b.replace(/^###\s/, "")) + "</h4>";
+      if (/^##\s/.test(b)) return "<h3>" + inline(b.replace(/^##\s/, "")) + "</h3>";
+      if (/^[-*]\s/m.test(b)) {
+        var items = b.split(/\r?\n/).filter(function (l) { return /^[-*]\s/.test(l); });
+        return "<ul>" + items.map(function (l) { return "<li>" + inline(l.replace(/^[-*]\s/, "")) + "</li>"; }).join("") + "</ul>";
+      }
+      return "<p>" + inline(b) + "</p>";
+    }).join("");
+  }
+
+  function pickApk(rel) {
+    if (!rel.assets || !rel.assets.length) return null;
+    return rel.assets.filter(function (a) { return /\.apk$/i.test(a.name); })[0] || null;
+  }
+
+  function renderLatest(rel) {
+    var apk = pickApk(rel);
+    var ver = (rel.tag_name || "").replace(/^v/i, "");
+    el("vc-ver").textContent = "v" + ver;
+    el("vc-date").textContent = (rel.name || "最新版本").replace(/^免疫卫士\s*/i, "");
+    el("vc-size").textContent = apk ? fmtSize(apk.size) : "—";
+    el("vc-published").textContent = fmtDate(rel.published_at);
+    el("vc-downloads").textContent = apk ? fmtNum(apk.download_count) : "—";
+    el("vc-hash").textContent = apk && apk.digest ? "SHA-256 " + String(apk.digest).replace(/^sha256:/, "") : "";
+    el("meta-size").textContent = apk ? fmtSize(apk.size) : "安装包获取中";
+    el("meta-date").textContent = fmtDate(rel.published_at) + " 发布";
+
+    var primary = el("dl-primary");
+    if (apk) {
+      primary.href = apk.browser_download_url;
+      primary.setAttribute("download", apk.name);
+      primary.removeAttribute("aria-disabled");
+    } else {
+      primary.href = GH_URL;
+      primary.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.open(GH_URL, "_blank", "noopener");
+      });
+    }
+  }
+
+  function renderList(list) {
+    var box = el("release-list");
+    var top = list[0] && list[0].tag_name;
+    box.innerHTML = list.map(function (rel) {
+      var ver = (rel.tag_name || "").replace(/^v/i, "");
+      var apk = pickApk(rel);
+      var isLatest = rel.tag_name === top;
+      return '<article class="release">' +
+        '<div class="release-head">' +
+          '<span class="release-ver">v' + esc(ver) + '</span>' +
+          (isLatest ? '<span class="release-tag">最新</span>' : '') +
+          (rel.prerelease ? '<span class="release-tag">预发布</span>' : '') +
+          '<span class="release-date">' + esc(fmtDate(rel.published_at)) + '</span>' +
+          (apk ? '<span class="release-date">' + esc(fmtSize(apk.size)) + '</span>' : '') +
+        '</div>' +
+        '<div class="release-body">' + md(rel.body) + '</div>' +
+        '</article>';
+    }).join("");
+  }
+
+  function fail(msg) {
+    var s = el("log-state");
+    s.className = "state state-error is-on";
+    s.innerHTML = "版本信息暂时没取到（" + esc(msg) + "）。可直接前往 " +
+      '<a href="' + GH_URL + '" target="_blank" rel="noopener noreferrer">GitHub Releases</a> 查看与下载。';
+    el("vc-date").textContent = "暂时无法获取版本信息";
+  }
+
+  fetch(API, { headers: { Accept: "application/vnd.github+json" } })
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    })
+    .then(function (all) {
+      var list = (all || []).filter(function (r) {
+        return !r.draft && pickApk(r);
+      });
+      if (!list.length) throw new Error("暂无已发布安装包");
+      el("log-state").className = "state";
+      renderLatest(list[0]);
+      renderList(list);
+    })
+    .catch(function (e) {
+      fail(e && e.message ? e.message : "网络异常");
+    });
+})();
+</script>
+</body>
+</html>

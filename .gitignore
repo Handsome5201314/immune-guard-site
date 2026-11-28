@@ -1,2 +1,6 @@
 *.png.bak
 .DS_Store
+
+# 构建产物与验证截图，不入库
+_render/
+*.bak

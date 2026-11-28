@@ -171,8 +171,9 @@ BACKUP="$REMOTE_DIR.bak-$(date +%Y%m%d-%H%M%S)"
 ssh -i "$KEY" -o StrictHostKeyChecking=no "$USER_@$IP" \
   "cp -r '$REMOTE_DIR' '$BACKUP' && echo 已备份到 $BACKUP"
 
+# 全站页面 + SEO 文件（新增页面时无需再改这里）
 scp -i "$KEY" -o StrictHostKeyChecking=no \
-  index.html download.html version.json "$USER_@$IP:$REMOTE_DIR/"
+  ./*.html version.json sitemap.xml robots.txt "$USER_@$IP:$REMOTE_DIR/"
 scp -i "$KEY" -o StrictHostKeyChecking=no -r \
   assets "$USER_@$IP:$REMOTE_DIR/"
 

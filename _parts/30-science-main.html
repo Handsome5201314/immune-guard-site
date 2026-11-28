@@ -1,0 +1,117 @@
+<main id="main">
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="container">
+    <p class="crumbs"><a href="index.html">首页</a><span>科学与安全</span></p>
+    <p class="eyebrow" style="margin-top:18px">科学与安全</p>
+    <h1 id="page-title">依据是什么，边界在哪里</h1>
+    <div class="lead"><p>这一页不做好看的科普。我们把「免疫卫士凭什么这么说」和「它不能说什么」分开写清楚，每条依据都能追到原始文献。</p></div>
+  </div>
+</section>
+
+<section class="section" id="basics" aria-labelledby="basics-title">
+  <div class="container with-toc">
+    <div>
+      <header class="section-head" style="margin-bottom:32px"><h2 id="basics-title" style="font-size:34px">8 个最常见的问题</h2></header>
+      <div class="acc q-list">
+        <details open><summary>免疫状态分到底是怎么算出来的？</summary><div class="acc-body"><p>它由服务端规则统一计算，把四类数据按权重合成 0–100 的分数：睡眠与恢复、身体活动、生理信号（心率、HRV、皮温等）、以及数据完整度。App 只负责展示，本地不参与计分。</p><p>权重是产品设计参数，不是临床阈值。它衡量的是「相对你自身基线的稳定程度」，不是「免疫功能的医学指标」。</p></div></details>
+        <details><summary>这个分数能说明我免疫力强不强吗？</summary><div class="acc-body"><p><b>不能。</b>目前没有任何消费级设备或问卷能测出「免疫力强弱」，真正的免疫功能评估需要淋巴细胞亚群、免疫球蛋白、疫苗应答等临床检查。</p><p>免疫状态分反映的是生活方式与生理信号的综合趋势。它有意义的地方在于「持续变化」，而不在于绝对数值。</p></div></details>
+        <details><summary>为什么有时候根本不显示分数？</summary><div class="acc-body"><p>三种情况会不显示：数据天数不足、数据缺口过大、或模型可信度低于阈值。这时接口返回的分数是空值，页面显示「暂无法评分」。</p><p>这是刻意设计的：<b>宁可不说，也不给一个看起来精确的假数字</b>。用 0 分或平均值填补，会让你误以为身体变差了。</p></div></details>
+        <details><summary>戒指测的 HRV 准不准？</summary><div class="acc-body"><p>需要区分两种信号来源：医疗级 ECG 与消费级 PPG（光电容积脉搏波）。ESC／NASPE 的 HRV 标准建立在 ECG 的 NN 间期上，消费级设备用 PPG 推算，会受佩戴松紧、手指温度、运动伪影影响。</p><p>所以戒指的 HRV 适合看<b>你自己的长期趋势</b>，不适合与别人的数值比较，更不能直接套用临床参考区间。</p></div></details>
+        <details><summary>血氧数据可靠吗？</summary><div class="acc-body"><p>消费级设备的血氧是筛查性参考，不是诊断依据。指甲油、手指温度低、佩戴位置偏移都会影响读数。单次偏低不等于缺氧，持续偏低或伴随不适请就医。</p><p>我们不把血氧用于评分权重，只作为信号展示。</p></div></details>
+        <details><summary>报告解读的依据是什么？</summary><div class="acc-body"><p>两层依据：一是报告本身的参考区间（以你那份报告的检验科标准为准）；二是知识库中的文献解释，比如 CRP 与 ESR 是非特异性炎症指标、单项异常不能定位病因。</p><p>解读会明确写出「这条结论来自哪里」和「这个结论有什么局限」，不会给你一个没有出处的好坏判断。</p></div></details>
+        <details><summary>会让 AI 帮我诊断吗？</summary><div class="acc-body"><p>不会。产品定位是健康管理辅助工具，不是医疗器械，也不提供诊断服务。小卫被明确限制为不做诊断、不给用药建议。</p><p>当问题超出健康管理范围（比如持续胸痛、不明原因发热、明显体重下降），它会直接建议你就医，而不是继续解释。</p></div></details>
+        <details><summary>你们的科普内容有出处吗？</summary><div class="acc-body"><p>有。免疫卫士维护一份审核过的专家知识库，当前版本收录 19 篇文献，涵盖免疫学基础、检验指标、睡眠与活动、可穿戴信号、行为科学、医学安全与合规六类。</p><p>每篇都记录了原题、作者、期刊、DOI 或 PMID、以及<b>使用边界</b>——也就是「这篇文献不能用来证明什么」。下面的 4 张卡片就是其中一部分。</p></div></details>
+      </div>
+    </div>
+    <nav class="toc" aria-label="本页目录">
+      <h4>本页内容</h4>
+      <a href="#basics">8 个常见问题</a>
+      <a href="#cards">科普卡片与出处</a>
+      <a href="#boundary">医学边界</a>
+      <a href="#compliance">合规与资质</a>
+    </nav>
+  </div>
+</section>
+
+<section class="section section-tint" id="cards" aria-labelledby="cards-title">
+  <div class="container">
+    <header class="section-head">
+      <p class="kicker">科普卡片</p>
+      <h2 id="cards-title">4 张卡片，4 个真实出处</h2>
+      <p class="section-sub">每张卡片下面都写了原题、期刊、DOI 或 PMID，以及这条结论的使用边界。你可以自己去查。</p>
+    </header>
+    <div class="ref">
+      <article class="card-ref">
+        <div class="top"><span class="no">IG-01</span><h3>免疫球蛋白：单次正常 ≠ 免疫没问题</h3></div>
+        <p>总 IgG、IgA、IgM 必须结合年龄、实验室参考区间和感染史一起解读。定量抗体水平与特异性抗体功能是两类不同信息——数值正常，也不能单独排除功能缺陷。</p>
+        <p style="font-size:13.5px;color:var(--ink-3)">所以：看到 Ig 系列「都在参考区间内」就认为免疫力没问题，是不成立的。</p>
+        <p class="src"><b>2025 Inborn errors of immunity practice parameter</b> · Orange JS 等 · Annals of Allergy, Asthma &amp; Immunology 136(4):426–493.e1（2026）<span>DOI 10.1016/j.anai.2025.10.026 · PMID 41936423</span></p>
+      </article>
+      <article class="card-ref">
+        <div class="top"><span class="no">IG-02</span><h3>CRP 与 ESR：炎症指标，不是免疫力评分</h3></div>
+        <p>CRP 与 ESR 是非特异性的系统性炎症指标，动态变化可辅助临床评估。ESR 容易受红细胞特性和其他非炎症因素影响，两者不能互相替代。</p>
+        <p style="font-size:13.5px;color:var(--ink-3)">所以：单项异常既不能定位炎症病因，也不能用来判断「免疫能力强弱」。</p>
+        <p class="src"><b>Erythrocyte Sedimentation Rate and C-reactive Protein Measurements and Their Relevance in Clinical Medicine</b> · Bray C 等 · WMJ 115(6):317–321（2016）<span>PMID 29094869</span></p>
+      </article>
+      <article class="card-ref">
+        <div class="top"><span class="no">IG-08</span><h3>HRV：RMSSD 和 SDNN 不是一回事</h3></div>
+        <p>RMSSD 描述相邻正常心搏间期差异，SDNN 描述正常间期的离散程度。两者含义不同，比较时必须考虑记录长度、体位、呼吸、节律和信号处理方式。</p>
+        <p style="font-size:13.5px;color:var(--ink-3)">所以：24 小时 SDNN 不能和短时 SDNN 直接比；ECG 得来的标准也不能直接套在消费级 PPG 上。</p>
+        <p class="src"><b>Heart rate variability: Standards of measurement, physiological interpretation, and clinical use</b> · ESC／NASPE Task Force · European Heart Journal 17(3):354–381（1996）<span>DOI 10.1093/oxfordjournals.eurheartj.a014868 · PMID 8737210</span></p>
+      </article>
+      <article class="card-ref">
+        <div class="top"><span class="no">IG-03 / IG-06</span><h3>睡眠 7 小时，活动 150 分钟</h3></div>
+        <p>健康成年人通常应规律地每晚睡至少 7 小时；一般成年人每周可参考 150–300 分钟中等强度或 75–150 分钟高强度有氧活动，以及等量组合。</p>
+        <p style="font-size:13.5px;color:var(--ink-3)">所以：不能从单夜睡眠时长推断免疫功能；WHO 指南也<b>没有</b>统一的「一万步」要求。</p>
+        <p class="src"><b>Recommended Amount of Sleep for a Healthy Adult</b> · Watson NF 等 · J Clin Sleep Med 11(6):591–592（2015）<span>DOI 10.5664/jcsm.4758 · PMID 25979105</span><br><b>WHO guidelines on physical activity and sedentary behaviour</b> · WHO（2020）<span>ISBN 9789240014886</span></p>
+      </article>
+    </div>
+    <p class="tiny" style="margin-top:18px">以上为知识库 v1.0 收录文献的摘录性转述，不是原文全文。医学决策请以医生意见为准。</p>
+  </div>
+</section>
+
+<section class="section" id="boundary" aria-labelledby="boundary-title">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="boundary-title">什么时候该找医生，而不是看 App</h2>
+      <p class="section-sub">这一节比前面所有内容都重要。免疫卫士能帮你整理资料、观察趋势，但它看不见你本人。</p>
+    </header>
+    <div class="boundary">
+      <div class="bd go">
+        <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>适合用免疫卫士</h3>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>想看懂体检报告里的指标含义和参考区间</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>想观察睡眠、活动、HRV 的长期变化趋势</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>想把历年报告整理成可对比的档案</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>想建立规律作息和活动习惯</li>
+        </ul>
+      </div>
+      <div class="bd">
+        <h3><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>请直接就医</h3>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>持续或反复发热，尤其超过两周</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>不明原因的体重明显下降</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>反复感染、伤口难愈、需要反复用抗生素</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>胸痛、明显气促、持续心悸</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>报告里出现医生明确标注需要复查的异常</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>已确诊疾病、正在接受免疫抑制治疗、孕期或哺乳期</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="compliance" aria-labelledby="compliance-title">
+  <div class="container">
+    <header class="section-head"><h2 id="compliance-title" style="font-size:32px">合规与资质说明</h2><p class="section-sub">以下是我们目前能确认的事实，以及还没有拿到的东西。</p></header>
+    <div class="safety-strip">
+      <div><b>产品性质</b>健康管理辅助工具，不是医疗器械，不提供诊断或治疗建议。</div>
+      <div><b>数据合规</b>按《个人信息保护法》要求做单独同意与撤回机制；健康数据属敏感个人信息。</div>
+      <div><b>广告合规</b>不使用「治疗」「治愈」「提升免疫力」等疗效性表述。</div>
+      <div><b>待补齐</b>医疗器械注册证、ICP 备案号、正式隐私政策与用户协议。</div>
+    </div>
+    <div class="callout amber" style="margin-top:22px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p>我们没有宣称自己拥有医疗器械注册证，也没有宣称通过任何临床验证。如果未来取得相关资质，会在这里如实更新，并附上证书编号。</p></div>
+    <p class="section-link"><a class="link-more" href="legal.html">查看隐私与数据说明<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+  </div>
+</section>
+</main>

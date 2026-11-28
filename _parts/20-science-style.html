@@ -1,0 +1,30 @@
+<style>
+/* ===== 科学与安全专属 ===== */
+.q-list .acc summary{font-size:16px}
+.ref{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card-ref{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:24px;gap:12px}
+.card-ref .top{display:flex;align-items:center;gap:12px}
+.card-ref .no{font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--green-ink);background:var(--green-bg);border:1px solid var(--green-border);border-radius:6px;padding:3px 8px}
+.card-ref h3{font-size:18px;margin:0}
+.card-ref p{font-size:14.5px;color:var(--ink-2);line-height:1.75}
+.card-ref .src{margin-top:auto;padding-top:14px;border-top:1px solid var(--line-2);font-size:12.5px;color:var(--ink-3);line-height:1.65}
+.card-ref .src b{color:var(--ink-2)}
+.card-ref .src span{display:block;font-family:var(--mono);font-size:11.5px;color:var(--ink-4);margin-top:4px;word-break:break-all}
+.boundary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.bd{border-radius:var(--r-card);padding:26px;border:1px solid var(--line);background:#fff}
+.bd.go{background:var(--green-bg);border-color:var(--green-border)}
+.bd h3{font-size:18px;display:flex;align-items:center;gap:10px}
+.bd h3 .ic{width:22px;height:22px;color:var(--green-ink)}
+.bd ul{margin-top:14px;display:grid;gap:10px}
+.bd li{font-size:14.5px;color:var(--ink-2);line-height:1.7;display:flex;gap:10px}
+.bd li .ic{width:17px;height:17px;margin-top:3px;flex:none;color:var(--ink-4)}
+.bd.go li{color:var(--ink)}
+.bd.go li .ic{color:var(--green-ink)}
+.safety-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
+.safety-strip div{background:#fff;border:1px solid var(--line);border-radius:var(--r-small);padding:16px;font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+.safety-strip b{display:block;font-size:14.5px;color:var(--ink);margin-bottom:4px}
+@media (max-width:1023px){.ref,.boundary{grid-template-columns:minmax(0,1fr)}.safety-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:639px){.safety-strip{grid-template-columns:minmax(0,1fr)}.card-ref,.bd{padding:20px}}
+</style>
+</head>
+<body>

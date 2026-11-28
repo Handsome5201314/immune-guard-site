@@ -1,0 +1,110 @@
+<main id="main">
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="container">
+    <p class="crumbs"><a href="index.html">首页</a><span>隐私与数据说明</span></p>
+    <p class="eyebrow" style="margin-top:18px">隐私与数据</p>
+    <h1 id="page-title">你的健康数据，怎么被处理</h1>
+    <div class="lead"><p>这一页说明产品当前<b>实际</b>怎么处理数据，包括哪些在本机、哪些会上传、哪些还没做好。它不是隐私政策，也不构成法律承诺。</p></div>
+  </div>
+</section>
+
+<section class="section" id="privacy" aria-labelledby="privacy-title">
+  <div class="container with-toc">
+    <div>
+      <div class="legal-alert">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <div>
+          <h3>先说明这一页的性质</h3>
+          <p>正式的《隐私政策》与《用户协议》<b>尚未发布</b>，需要通过法务审核。我们不会用一份模板文本冒充法律文件，也不会先写一段「我们承诺……」来让你放心。</p>
+          <p>下面写的是工程与产品层面的真实情况，用于让你了解数据流向。它可能随版本变化，正式文件发布后以正式文件为准。</p>
+        </div>
+      </div>
+
+      <h2 id="local" style="font-size:28px;margin:44px 0 12px">哪些数据在本机，哪些会上传</h2>
+      <div class="flow-mini">
+        <div><b>只在本机</b>体检报告的原始图片、OCR 识别中间结果、你选择「仅保存本机」的报告数据。</div>
+        <div><b>会同步到账号</b>你选择「确认并同步」的结构化指标、健康档案基础信息、对话记录。</div>
+        <div><b>设备数据</b>戒指通过蓝牙传到手机，再由 App 同步到服务端用于计算趋势与状态分。</div>
+      </div>
+
+      <h2 id="scope" style="font-size:28px;margin:44px 0 12px">六类用途，逐项授权</h2>
+      <p style="font-size:15.5px;color:var(--ink-2);line-height:1.8;margin-bottom:16px">数据用途在 App 内拆成六类，每一类都要你单独同意。关闭某项后，对应功能立即停止采集。</p>
+      <div class="tbl-wrap">
+        <table class="tbl scope-tbl">
+          <thead><tr><th scope="col">用途</th><th scope="col">标识</th><th scope="col">开启后会发生什么</th><th scope="col">关闭后的影响</th></tr></thead>
+          <tbody>
+            <tr><td>健康分析</td><td><code>health_analysis</code></td><td>用你的数据计算状态分与趋势</td><td>不生成评分与趋势，其他功能可用</td></tr>
+            <tr><td>报告解读</td><td><code>report_read</code></td><td>对核对后的指标做逐项解释</td><td>无法获得解读，报告仍可本机保存</td></tr>
+            <tr><td>设备同步</td><td><code>ring_sync</code></td><td>戒指数据同步到 App 与服务端</td><td>停止同步，仅保留已同步的历史</td></tr>
+            <tr><td>相机</td><td><code>camera</code></td><td>拍摄报告、扫描资料</td><td>无法拍照上传，可改用相册</td></tr>
+            <tr><td>面部检测</td><td><code>facephys</code></td><td>实验性 rPPG 面部信号估算</td><td>不影响其他任何功能</td></tr>
+            <tr><td>AI 分析</td><td><code>ai_analysis</code></td><td>把小卫的对话与你的资料结合</td><td>小卫只能给通用回答</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tiny" style="margin-top:12px">撤回授权需要二次确认，避免误触。撤回后已产生的历史数据如何处理，完整规则将在正式隐私政策中说明。</p>
+
+      <h2 id="rank" style="font-size:28px;margin:44px 0 12px">排行榜与对外展示</h2>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th scope="col">项目</th><th scope="col">规则</th></tr></thead>
+          <tbody>
+            <tr><td>默认状态</td><td>关闭。必须你主动开启才参与</td></tr>
+            <tr><td>展示字段</td><td>昵称、活力积分、等级、徽章数量</td></tr>
+            <tr><td>永不展示</td><td>免疫状态分、检验值、疾病名称、报告原文</td></tr>
+            <tr><td>关闭后</td><td>立即从榜单移除，不保留历史名次</td></tr>
+            <tr><td>小队内</td><td>同样只看积分，不展示任何健康数据</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="rights" style="font-size:28px;margin:44px 0 12px">你可以做的操作</h2>
+      <ul style="display:grid;gap:12px;max-width:780px">
+        <li style="display:flex;gap:10px;font-size:15px;color:var(--ink-2);line-height:1.7"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px;margin-top:3px;color:var(--green-ink);flex:none"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b style="color:var(--ink)">查看</b>：在 App 内查看已保存的报告、记录与授权状态。</span></li>
+        <li style="display:flex;gap:10px;font-size:15px;color:var(--ink-2);line-height:1.7"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px;margin-top:3px;color:var(--green-ink);flex:none"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b style="color:var(--ink)">修改</b>：报告识别结果可以重新核对编辑；基础信息可修改。</span></li>
+        <li style="display:flex;gap:10px;font-size:15px;color:var(--ink-2);line-height:1.7"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px;margin-top:3px;color:var(--green-ink);flex:none"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b style="color:var(--ink)">撤回</b>：六类授权均可单独撤回，二次确认后生效。</span></li>
+        <li style="display:flex;gap:10px;font-size:15px;color:var(--ink-2);line-height:1.7"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px;margin-top:3px;color:var(--ink-4);flex:none"><path d="M6 6l12 12M18 6 6 18"/></svg><span><b style="color:var(--ink)">导出与删除账号</b>：完整功能尚未提供。这一点我们如实说明，不写成「支持导出」。</span></li>
+      </ul>
+
+      <h2 id="policy" style="font-size:28px;margin:44px 0 12px">还没有的东西</h2>
+      <div class="legal-doc">
+        <h3>隐私政策<span class="badge">待补齐</span></h3>
+        <p>需要覆盖：处理者身份与联系方式、处理目的与法律依据、保存期限、对外提供情形、跨境传输情况、个人权利行使方式、投诉渠道。</p>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>当前状态：未发布</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>阻塞原因：需法务审核，且运营主体信息尚未最终确认</li>
+        </ul>
+      </div>
+      <div class="legal-doc" id="terms" style="margin-top:16px">
+        <h3>用户协议<span class="badge">待补齐</span></h3>
+        <p>需要覆盖：服务内容与边界、账号规则、免责与责任限制、知识产权、协议变更与终止、争议解决方式。</p>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>当前状态：未发布</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>阻塞原因：同上</li>
+        </ul>
+      </div>
+      <div class="legal-doc" id="disclaimer" style="margin-top:16px">
+        <h3>健康管理免责声明</h3>
+        <p>免疫卫士是健康管理辅助工具，不是医疗器械，不提供疾病诊断、治疗建议或用药指导。App 与本站的全部解读内容仅供参考，不能替代医生的面诊、检查与处方。</p>
+        <p>如出现持续发热、不明原因体重下降、胸痛、明显气促等情况，请立即就医，不要依赖本产品判断。</p>
+        <p>已确诊疾病、正在接受免疫抑制治疗、孕期或哺乳期人群，使用前请咨询医生。</p>
+      </div>
+
+      <h2 id="law" style="font-size:28px;margin:44px 0 12px">适用的法规</h2>
+      <p style="font-size:15.5px;color:var(--ink-2);line-height:1.8">健康数据属于敏感个人信息。我们按《中华人民共和国个人信息保护法》《网络数据安全管理条例》的要求设计授权与撤回机制，并按《互联网广告管理办法》约束站内表述，不使用疗效性宣传用语。</p>
+      <p class="tiny" style="margin-top:10px">以上为设计依据的说明，不代表已完成合规认证或备案。</p>
+    </div>
+
+    <nav class="toc" aria-label="本页目录">
+      <h4>本页内容</h4>
+      <a href="#local">本机与上传</a>
+      <a href="#scope">六类用途</a>
+      <a href="#rank">排行榜规则</a>
+      <a href="#rights">你的操作</a>
+      <a href="#policy">隐私政策</a>
+      <a href="#disclaimer">免责声明</a>
+      <a href="#law">适用法规</a>
+    </nav>
+  </div>
+</section>
+</main>

@@ -1,0 +1,135 @@
+
+<!-- ===== 两套分值 ===== -->
+<section class="section section-tint" id="scores" aria-labelledby="scores-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">两套独立分值</p>
+      <h2 id="scores-title">一个反映身体信号，一个记录你的行动</h2>
+      <p class="section-sub">免疫卫士里有两个容易混淆的数字。它们互不影响：<em style="font-style:normal;color:var(--green-ink)">免疫状态分</em>只反映数据趋势，<em style="font-style:normal;color:var(--lilac-ink)">活力积分</em>只记录你做了什么。做任务不会让状态分变好，状态分低也不会扣积分。</p>
+    </header>
+    <div class="dual reveal">
+      <article class="dual-card dual-score">
+        <p class="dk">免疫状态分</p>
+        <h3>身体信号的趋势参考</h3>
+        <p class="en">Immune Status Score · 0–100</p>
+        <p class="dv">82<small>/ 100</small></p>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>由睡眠、活动、生理指标等多类数据综合计算，反映一段时间内的趋势</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>数据不足或可信度不够时，App 会直接不显示分数，而不是给一个假数</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>它是健康管理的参考，不是医学诊断结论</li>
+        </ul>
+        <p class="dv-note">图示数值为演示数据，不代表任何真实用户。</p>
+        <p class="section-link" style="margin-top:16px"><a class="link-more" href="growth.html#score" style="color:#A7F3D0">了解状态分怎么算<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+      </article>
+      <article class="dual-card dual-vp">
+        <p class="dk">活力积分</p>
+        <h3>记录你完成的健康行动</h3>
+        <p class="en">Vitality Points · 只增不因状态分变化</p>
+        <p class="dv">386<small>VP</small></p>
+        <p class="dv-note" style="margin-top:14px">示例：完成「今晚 23:30 前上床」+20 VP</p>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>完成每日任务、数据补全、科普学习获得，只与行动有关</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>用于解锁等级和徽章，排行榜只比较积分，不显示任何健康数据</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>服务端接口目前处于内测阶段，页面中的数值仅为示意</li>
+        </ul>
+        <p class="dv-note">图示数值为演示数据，不代表任何真实用户。</p>
+        <p class="section-link" style="margin-top:16px"><a class="link-more" href="growth.html#vp" style="color:#DDD6FE">了解积分怎么获得<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+      </article>
+      <p class="dual-vs reveal">两套分值<b>独立计算、互不换算</b>。<a href="growth.html" class="link-more" style="font-size:14px;margin-left:6px">进入健康成长中心<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 功能速览 ===== -->
+<section class="section" id="features" aria-labelledby="features-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">核心功能</p>
+      <h2 id="features-title">每个功能都标明它现在处于什么阶段</h2>
+      <p class="section-sub">我们不在官网上把「规划中」说成「已上线」。下面每一项都按 App 的真实实现标注：<span class="tag tag-live">已上线</span> <span class="tag tag-beta">内测中</span> <span class="tag tag-plan">即将推出</span></p>
+    </header>
+    <div class="feat-grid">
+      <a class="feat reveal" href="features.html#workbench"><span class="card-icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M7.5 9.5h4M7.5 13h7"/></svg></span><div><h3>健康工作台</h3><p>状态分、四类信号与今日行动，一屏看清。<br><span class="tag tag-live">已上线</span></p></div></a>
+      <a class="feat reveal" href="features.html#assistant"><span class="card-icon lilac" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M5 6.5h14v9H10l-4 3v-3H5z"/><path d="M9 10h6M9 12.5h3"/></svg></span><div><h3>AI 助手小卫</h3><p>结合你的资料回答，支持语音和附件。<br><span class="tag tag-live">已上线</span></p></div></a>
+      <a class="feat reveal" href="features.html#report"><span class="card-icon mist" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4v13H7Z M14 3.5v4h4 M9.5 13.5h5M9.5 16.5h5"/></svg></span><div><h3>体检报告解读</h3><p>拍照识别，你先核对，AI 再逐项解释。<br><span class="tag tag-live">已上线</span></p></div></a>
+      <a class="feat reveal" href="features.html#trends"><span class="card-icon amber" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M4 19.5h16M5 15l4-5 3.5 3L19 6"/></svg></span><div><h3>健康趋势</h3><p>7 天与 30 天变化，标出数据来源和缺口。<br><span class="tag tag-live">已上线</span></p></div></a>
+      <a class="feat reveal" href="features.html#devices"><span class="card-icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="13" r="5.5"/><path d="M9.5 3.5h5l-.6 4M9.5 18.5h5l-.6-4"/></svg></span><div><h3>智能设备</h3><p>免疫卫士 Ring 已稳定；华为手环内测中。<br><span class="tag tag-live">戒指</span> <span class="tag tag-beta">华为手环</span></p></div></a>
+      <a class="feat reveal" href="features.html#privacy"><span class="card-icon mist" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4.5 18.5 6.7V11c0 4.6-2.6 7.8-6.5 9.5C8.1 18.8 5.5 15.6 5.5 11V6.7Z M9.5 11.5 11.5 13.5 15 10"/></svg></span><div><h3>隐私与授权</h3><p>六类用途逐项授权，可随时撤回。<br><span class="tag tag-live">已上线</span></p></div></a>
+    </div>
+    <p class="section-link reveal"><a class="link-more" href="features.html">查看全部 9 项功能与真实界面<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ===== 新手指南入口 ===== -->
+<section class="section section-tint" id="guide" aria-labelledby="guide-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">新手指南</p>
+      <h2 id="guide-title">从下载到读懂第一份报告，只需要七步</h2>
+      <p class="section-sub">每一步都有真实界面截图和注意事项。卡在哪一步，直接点进去看那一步。</p>
+    </header>
+    <ol class="steps reveal" style="grid-template-columns:repeat(3,minmax(0,1fr));display:grid">
+      <li class="step" style="padding-top:20px"><h4><a href="guide.html#t1">第一次打开</a></h4><p>下载安装、注册登录、完成基础信息。</p></li>
+      <li class="step"><h4><a href="guide.html#t2">连接智能戒指</a></h4><p>蓝牙配对与权限，第一次同步数据。</p></li>
+      <li class="step"><h4><a href="guide.html#t3">上传体检报告</a></h4><p>拍照 → OCR 识别 → 你核对确认 → AI 解读。</p></li>
+      <li class="step"><h4><a href="guide.html#t4">和小卫对话</a></h4><p>问什么、怎么问，附示例问题。</p></li>
+      <li class="step"><h4><a href="guide.html#t5">看懂趋势</a></h4><p>个人基线、数据来源与缺口标记。</p></li>
+      <li class="step"><h4><a href="guide.html#t6">每日任务与积分</a></h4><p>完成任务、获得积分，不改变状态分。</p></li>
+      <li class="step"><h4><a href="guide.html#t7">管理隐私授权</a></h4><p>六类用途逐项开关，随时撤回。</p></li>
+    </ol>
+    <p class="section-link reveal"><a class="link-more" href="guide.html">进入完整新手指南<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ===== 预约体验 ===== -->
+<section class="section" id="trial" aria-labelledby="trial-title">
+  <div class="container">
+    <div class="trial reveal">
+      <div class="trial-copy">
+        <p class="kicker" style="color:#A7F3D0">预约体验</p>
+        <h2 id="trial-title">想先看看适不适合自己？</h2>
+        <p>留下联系方式，我们会安排一次 20 分钟的线上演示：用演示账号走一遍完整流程，你可以带着自己的体检报告来问。</p>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>演示使用演示数据，不需要你提供任何真实健康信息</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>不会向你推销硬件，也不会把你的信息转给第三方</li>
+        </ul>
+      </div>
+      <div class="trial-form">
+        <h3>预约 20 分钟演示</h3>
+        <form class="form" id="trial-form" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="f-name">姓名或称呼</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="怎么称呼你" required><p class="err">请填写称呼</p></div>
+            <div class="field"><label for="f-contact">手机号或邮箱</label><input id="f-contact" name="contact" type="text" inputmode="email" autocomplete="email" placeholder="用于联系你确认时间" required><p class="err">请填写有效的手机号或邮箱</p></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="f-interest">最感兴趣的功能</label><select id="f-interest" name="interest"><option>体检报告解读</option><option>智能戒指数据与趋势</option><option>AI 健康助手</option><option>健康任务与积分</option><option>团队 / 企业健康方案</option></select></div>
+            <div class="field"><label for="f-device">是否已有智能戒指</label><select id="f-device" name="device"><option>还没有</option><option>已有免疫卫士 Ring</option><option>有其他品牌戒指</option></select></div>
+          </div>
+          <div class="field"><label for="f-time">期望时间（可选）</label><input id="f-time" name="time" type="text" placeholder="例如：工作日晚上、周末上午"></div>
+          <div class="field" style="gap:10px"><label for="f-consent" style="display:flex;gap:10px;align-items:flex-start;margin:0;font-weight:400;font-size:14px;color:var(--ink-2);cursor:pointer"><input id="f-consent" name="consent" type="checkbox" required style="width:18px;height:18px;margin-top:3px;flex:none;accent-color:#10B981">我同意免疫卫士仅将以上信息用于安排本次演示与联系，不用于其他目的。<span class="err" style="margin-top:0">请先勾选授权</span></label></div>
+          <p class="form-status" id="trial-status" role="status" aria-live="polite"></p>
+          <button class="btn btn-primary" type="submit">提交预约</button>
+          <p class="tiny">演示只使用演示数据。请不要在此填写病历、检验单号等敏感健康信息。信息使用说明见 <a href="legal.html#privacy" style="color:var(--green-ink)">隐私与数据说明</a>。</p>
+        </form>
+        <p class="small muted" style="margin-top:16px">正式服务邮箱与企业合作渠道仍在配置中，<a href="about.html#contact" style="color:var(--green-ink);font-weight:600">关于页</a>已如实说明当前状态，配置完成后会同步开放。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 诚信承诺（替代 v1 无法核实的“合作方能力”表述） ===== -->
+<section class="section section-forest" id="promise" aria-labelledby="promise-title">
+  <div class="container">
+    <header class="section-head center reveal">
+      <p class="kicker">我们对内容的承诺</p>
+      <h2 id="promise-title">官网上写的每一句，都能在 App 里找到对应</h2>
+    </header>
+    <div class="grid grid-3">
+      <div class="reveal"><h3 style="color:#fff;font-size:19px">阶段如实标注</h3><p style="margin-top:8px;font-size:15px;line-height:1.75;color:rgba(255,255,255,.82)">功能按真实进度标为「已上线」「内测中」「即将推出」。内测功能会明确提示，不用截图暗示它已经稳定可用。</p></div>
+      <div class="reveal"><h3 style="color:#fff;font-size:19px">数据如实标注</h3><p style="margin-top:8px;font-size:15px;line-height:1.75;color:rgba(255,255,255,.82)">页面上所有分数、心率、HRV、睡眠时长均为演示数据，并逐一标明。没有真实用户数据支撑的数字，不会出现在这里。</p></div>
+      <div class="reveal"><h3 style="color:#fff;font-size:19px">能力如实标注</h3><p style="margin-top:8px;font-size:15px;line-height:1.75;color:rgba(255,255,255,.82)">免疫卫士不提供医学诊断，也不自己开展检测。我们不公布未经核实的用户数量、机构合作或临床成果。</p></div>
+    </div>
+    <p class="reveal" style="text-align:center;margin-top:36px"><a class="btn btn-ghost" href="science.html" style="background:rgba(255,255,255,.96);border-color:transparent">查看科学依据与医学边界<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+  </div>
+</section>
+</main>

@@ -3,323 +3,240 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>下载 · 生命方程 免疫卫士</title>
-<meta name="description" content="下载免疫卫士 App。最新 APK、版本号与更新日志来自 GitHub Release，本地缓存秒开，后台自动校对。">
+<title>下载免疫卫士 Android 版｜生命方程 · 免疫卫士</title>
+<meta name="description" content="下载免疫卫士 Android 版（v0.9.0）。页面实时读取最新版本号、安装包大小与 SHA-256 校验值，附系统要求、安装步骤与版本更新记录。iOS 版本尚未发布。">
+<meta name="keywords" content="免疫卫士下载,免疫卫士APK,健康管理App下载,Android健康App">
+<meta name="theme-color" content="#10B981">
+<link rel="canonical" href="https://www.xiaozhiserver.cloud/immune-guard/download.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="生命方程 · 免疫卫士">
+<meta property="og:title" content="下载免疫卫士 Android 版">
+<meta property="og:description" content="下载免疫卫士 Android 版（v0.9.0）。页面实时读取最新版本号、安装包大小与 SHA-256 校验值，附系统要求、安装步骤与版本更新记录。iOS 版本尚未发布。">
+<meta property="og:url" content="https://www.xiaozhiserver.cloud/immune-guard/download.html">
+<meta property="og:image" content="https://www.xiaozhiserver.cloud/immune-guard/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Crect%20width='24'%20height='24'%20rx='6'%20fill='%2310B981'/%3E%3Cpath%20d='M12%205l5.5%202v4c0%203.4-2.2%205.8-5.5%207.5C8.7%2016.8%206.5%2014.4%206.5%2011V7z'%20fill='none'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"website","name":"下载免疫卫士 Android 版｜生命方程 · 免疫卫士","url":"https://www.xiaozhiserver.cloud/immune-guard/download.html","inLanguage":"zh-CN","description":"下载免疫卫士 Android 版（v0.9.0）。页面实时读取最新版本号、安装包大小与 SHA-256 校验值，附系统要求、安装步骤与版本更新记录。iOS 版本尚未发布。"}
+</script>
 <style>
-:root{
-  --green:#10B981;--green-dark:#059669;--green-bg:#ECFDF5;--green-border:#A7F3D0;--green-ink:#047857;
-  --ink:#0F172A;--ink-2:#64748B;--ink-3:#94A3B8;
-  --line:#E2E8F0;--bg-tint:#F8FAFC;--card:#FFFFFF;--bg-page:#FFFFFF;
-  --amber:#F59E0B;--amber-bg:#FEF3C7;--amber-ink:#B45309;
-  --shadow:0 4px 16px rgba(15,23,42,.06);
-  --r-card:20px;--r-small:16px;--r-btn:14px;--nav-h:76px;
-  --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg-page);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-img{max-width:100%;display:block}
-h1,h2,h3,h4,p,ul{margin:0}
-ul{padding:0;list-style:none}
-.container{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
-
-/* 导航 */
-.site-header{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.88);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between}
-.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:15px;font-weight:600;letter-spacing:.01em}
-.brand-mark{width:28px;height:28px;border-radius:8px;background:var(--green);display:inline-flex;align-items:center;justify-content:center;flex:none}
-.brand-mark svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.nav-right{display:flex;align-items:center;gap:28px}
-.nav-link{font-size:15px;color:var(--ink-2);text-decoration:none;transition:color .15s}
-.nav-link:hover{color:var(--ink)}
-.nav-link.is-current{color:var(--green-ink);font-weight:600}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border:0;font-family:inherit;cursor:pointer;transition:background .15s,transform .15s}
-.btn-primary{background:var(--green);color:#fff;border-radius:var(--r-btn);font-size:16px;font-weight:500;height:52px;padding:0 26px}
-.btn-primary:hover{background:var(--green-dark)}
-.btn-pill{background:var(--green);color:#fff;border-radius:999px;font-size:15px;height:40px;padding:0 20px}
-.btn-pill:hover{background:var(--green-dark)}
-.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-
-/* 首屏 */
-.dl-hero{padding:72px 0 56px}
-.dl-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:56px;align-items:start}
-.eyebrow{display:inline-flex;align-items:center;background:var(--green-bg);border:1px solid var(--green-border);color:var(--green-ink);font-size:14px;border-radius:999px;padding:6px 16px;line-height:1.6}
-.dl-hero h1{margin:20px 0 16px;font-size:52px;font-weight:600;line-height:1.18;letter-spacing:-.02em}
-.dl-hero .lead{font-size:17px;color:var(--ink-2);max-width:520px}
-.dl-meta{display:flex;flex-wrap:wrap;gap:10px 20px;margin:26px 0 30px;font-size:14px;color:var(--ink-3)}
-.dl-meta span{display:inline-flex;align-items:center;gap:6px}
-.dl-meta svg{width:15px;height:15px;stroke:var(--ink-3);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.dl-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
-.btn-ghost{background:var(--card);border:1px solid var(--line);color:var(--ink);border-radius:var(--r-btn);font-size:16px;height:52px;padding:0 22px}
-.btn-ghost:hover{border-color:var(--ink-3)}
-.dl-note{margin-top:18px;font-size:13px;line-height:1.7;color:var(--ink-3);max-width:520px}
-
-/* 版本卡 */
-.version-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--shadow);padding:28px}
-.version-card .vc-label{font-size:13px;color:var(--ink-3)}
-.version-card .vc-ver{margin:8px 0 4px;font-size:40px;font-weight:600;line-height:1.1;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
-.version-card .vc-date{font-size:13px;color:var(--ink-2)}
-.vc-rows{margin-top:22px;border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:12px}
-.vc-row{display:flex;align-items:center;justify-content:space-between;font-size:14px}
-.vc-row dt{color:var(--ink-3)}
-.vc-row dd{margin:0;color:var(--ink);font-variant-numeric:tabular-nums}
-.vc-hash{margin-top:14px;font-size:11px;line-height:1.6;color:var(--ink-3);word-break:break-all;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-
-/* 状态 */
-.state{padding:18px 20px;border-radius:var(--r-small);font-size:14px;line-height:1.7;display:none}
-.state.is-on{display:block}
-.state-loading{background:var(--bg-tint);color:var(--ink-2)}
-.state-error{background:var(--amber-bg);color:var(--amber-ink)}
-
-/* 分段 */
-.section{padding:72px 0}
-.section-tint{background:var(--bg-tint)}
-.section-head h2{font-size:36px;font-weight:600;line-height:1.25;letter-spacing:-.01em}
-.section-head p{margin-top:12px;font-size:16px;color:var(--ink-2);max-width:620px}
-.section-head{margin-bottom:32px}
-
-/* 更新日志 */
-.release{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:28px;margin-bottom:16px}
-.release-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;margin-bottom:8px}
-.release-ver{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}
-.release-tag{font-size:12px;color:var(--green-ink);background:var(--green-bg);border:1px solid var(--green-border);border-radius:999px;padding:2px 10px;line-height:1.7}
-.release-tag.is-muted{color:var(--ink-3);background:var(--bg-tint);border-color:var(--line)}
-.release.is-history .release-ver{font-size:18px;color:var(--ink-2)}
-.release.is-history .release-body{font-size:14px}
-.dl-stamp{margin-top:14px;font-size:12px;color:var(--ink-3);line-height:1.7}
-.release-date{font-size:13px;color:var(--ink-3)}
-.release-body{margin-top:14px;font-size:15px;color:var(--ink-2)}
-.release-body h3{margin:18px 0 8px;font-size:16px;font-weight:600;color:var(--ink)}
-.release-body h4{margin:16px 0 6px;font-size:15px;font-weight:600;color:var(--ink)}
-.release-body h3:first-child,.release-body h4:first-child{margin-top:0}
-.release-body p{margin:8px 0}
-.release-body ul{margin:8px 0;display:flex;flex-direction:column;gap:6px}
+/* ===== 下载页专属 ===== */
+.dl-hero{padding:56px 0 64px;background:radial-gradient(1100px 500px at 8% -10%,rgba(16,185,129,.16),transparent 60%)}
+.dl-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:56px;align-items:start}
+.dl-main h1{font-size:48px;font-weight:600;line-height:1.16;letter-spacing:-.02em;margin-top:16px}
+.dl-main .lead{margin-top:16px;font-size:17.5px;color:var(--ink-2);max-width:560px;line-height:1.8}
+.dl-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin:24px 0 26px;font-size:14px;color:var(--ink-3)}
+.dl-meta span{display:inline-flex;align-items:center;gap:7px}
+.dl-meta .ic{width:15px;height:15px;color:var(--green-ink)}
+.dl-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.dl-note{margin-top:16px;font-size:13.5px;line-height:1.7;color:var(--ink-3);max-width:560px}
+.dl-hash{margin-top:12px;font-family:var(--mono);font-size:11.5px;color:var(--ink-4);word-break:break-all;max-width:520px;line-height:1.6}
+.dl-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--shadow);padding:24px;text-align:center;position:sticky;top:calc(var(--nav-h) + 24px)}
+.dl-card h2{font-size:15px;font-weight:600;color:var(--ink)}
+.dl-card .qr{width:100%;max-width:220px;margin:16px auto 0;border-radius:12px;border:1px solid var(--line);padding:8px;background:#fff}
+.dl-card .qr img{width:100%;display:block}
+.dl-card p{font-size:13px;color:var(--ink-3);line-height:1.65;margin-top:12px}
+.dl-card .ver-list{margin-top:16px;padding-top:16px;border-top:1px solid var(--line-2);display:grid;gap:8px;font-size:13.5px}
+.dl-card .ver-list div{display:flex;justify-content:space-between;gap:10px}
+.dl-card .ver-list dt{color:var(--ink-3)}
+.dl-card .ver-list dd{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.req-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.req{background:#fff;border:1px solid var(--line);border-radius:var(--r-small);padding:20px}
+.req h3{font-size:15.5px}
+.req ul{margin-top:10px;display:grid;gap:7px}
+.req li{font-size:14px;color:var(--ink-2);line-height:1.6;display:flex;gap:8px}
+.req li .ic{width:15px;height:15px;margin-top:3px;flex:none;color:var(--green-ink)}
+.source-dual{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.src-card{border:1px solid var(--line);border-radius:var(--r-card);padding:24px;background:#fff;display:flex;flex-direction:column}
+.src-card.rec{background:var(--green-bg);border-color:var(--green-border)}
+.src-card h3{font-size:17px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.src-card p{font-size:14px;color:var(--ink-2);margin-top:8px;line-height:1.7;flex:1}
+.src-card .btn{margin-top:16px;align-self:flex-start}
+.log-state{font-size:13.5px;color:var(--ink-3);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.log-state .dot{width:8px;height:8px;border-radius:50%;background:var(--ink-4);flex:none}
+/* 脚本在失败时会把 #log-state 的 class 换成 state state-error is-on，这里给出对应样式 */
+#log-state.state{border-radius:10px;padding:12px 14px;display:flex;gap:9px;align-items:flex-start;line-height:1.65}
+#log-state.state-error{background:var(--amber-bg);border:1px solid #FDE4B5;color:#7C4A03}
+#log-state.state-error a{color:var(--green-ink);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.log-state.is-ok .dot{background:var(--green)}
+.log-state.is-cache .dot{background:var(--amber)}
+.release{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:26px}
+.release+.release{margin-top:16px}
+.release-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;padding-bottom:16px;border-bottom:1px solid var(--line-2)}
+.release-head h3{font-size:19px}
+.release-head .when{font-size:13.5px;color:var(--ink-3)}
+.release-body{margin-top:16px;font-size:14.5px;color:var(--ink-2);line-height:1.75}
+.release-body h4{font-size:15px;color:var(--ink);margin:16px 0 6px}
+.release-body ul{display:grid;gap:6px;margin-top:6px}
 .release-body li{position:relative;padding-left:16px}
-.release-body li::before{content:"";position:absolute;left:0;top:.68em;width:5px;height:5px;border-radius:50%;background:var(--green-border)}
-.release-body strong{color:var(--ink);font-weight:600}
-.release-body code{background:var(--bg-tint);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-.release-body hr{border:0;border-top:1px solid var(--line);margin:18px 0}
-.release-more{margin-top:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.release-more .btn-ghost{height:44px;font-size:15px}
-
-/* 安装步骤 */
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);padding:26px}
-.step-no{width:32px;height:32px;border-radius:50%;background:var(--green-bg);color:var(--green-ink);display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;font-variant-numeric:tabular-nums}
-.step h3{margin:16px 0 8px;font-size:18px;font-weight:600}
-.step p{font-size:15px;color:var(--ink-2)}
-
-/* FAQ */
-.faq{display:flex;flex-direction:column;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
-.faq details{background:var(--card);padding:0}
-.faq summary{cursor:pointer;padding:20px 24px;font-size:16px;font-weight:500;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-size:20px;color:var(--ink-3);line-height:1;font-weight:400}
-.faq details[open] summary::after{content:"−"}
-.faq .faq-body{padding:0 24px 22px;font-size:15px;color:var(--ink-2)}
-
-/* 页脚 */
-.site-footer{background:var(--bg-tint);border-top:1px solid var(--line);padding:56px 0 32px;margin-top:24px}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
-.footer-brand p{margin-top:14px;font-size:13px;line-height:1.8;color:var(--ink-2);max-width:300px}
-.footer-col h4{font-size:13px;font-weight:600;color:var(--ink-3);letter-spacing:.04em;margin-bottom:14px}
-.footer-col a{display:block;font-size:14px;color:var(--ink-2);text-decoration:none;padding:6px 0}
-.footer-col a:hover{color:var(--ink)}
-.footer-bottom{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 28px;font-size:12px;color:var(--ink-3)}
-
-/* 骨架 */
-.sk{background:var(--bg-tint);border-radius:8px;height:1em;animation:sk 1.4s ease-in-out infinite}
-@keyframes sk{0%,100%{opacity:.65}50%{opacity:1}}
-@media (prefers-reduced-motion:reduce){.sk{animation:none}}
-
+.release-body li::before{content:"";position:absolute;left:2px;top:.7em;width:5px;height:5px;border-radius:50%;background:var(--green-border)}
+.release-body p+p{margin-top:8px}
+.release-body code{font-family:var(--mono);font-size:12.5px;background:var(--bg-tint);border-radius:4px;padding:1px 5px}
+.release-body hr{border:0;border-top:1px solid var(--line-2);margin:14px 0}
+.device-warn{display:flex;gap:14px;align-items:flex-start;background:var(--amber-bg);border:1px solid #FDE4B5;border-radius:var(--r-small);padding:18px 20px;margin-top:20px}
+.device-warn .ic{width:20px;height:20px;color:var(--amber-ink);margin-top:2px;flex:none}
+.device-warn p{font-size:14.5px;color:#7C4A03;line-height:1.7}
 @media (max-width:1023px){
-  .dl-hero-grid{grid-template-columns:minmax(0,1fr);gap:36px}
-  .version-card{max-width:420px}
-  .dl-hero h1{font-size:44px}
-  .steps{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .footer-brand{grid-column:1/-1}
-}
-@media (max-width:899px){
-  .nav-right .nav-link{display:none}
-  .section{padding:56px 0}
-  .section-head h2{font-size:30px}
+  .dl-grid{grid-template-columns:minmax(0,1fr);gap:32px}
+  .dl-card{position:static;max-width:320px;margin:0 auto}
+  .dl-main h1{font-size:38px}
+  .req-grid{grid-template-columns:minmax(0,1fr)}
+  .source-dual{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:639px){
-  .container{padding-left:20px;padding-right:20px}
-  .dl-hero{padding:40px 0 36px}
-  .dl-hero h1{font-size:36px}
-  .dl-hero .lead{font-size:16px}
-  .btn-primary,.btn-ghost{width:100%}
-  .dl-actions{gap:12px}
-  .version-card{padding:22px}
-  .version-card .vc-ver{font-size:34px}
-  .release{padding:20px}
-  .footer-grid{grid-template-columns:1fr}
+  .dl-hero{padding:36px 0 44px}
+  .dl-main h1{font-size:31px}
+  .dl-main .lead{font-size:16px}
+  .dl-actions .btn{width:100%}
+  .release,.dl-card{padding:20px}
 }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">跳到主要内容</a>
 
 <header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4l6 2.2v4.6c0 3.8-2.5 6.4-6 8.2-3.5-1.8-6-4.4-6-8.2V6.2L12 4z"/></svg></span>
-      生命方程 · 免疫卫士
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="生命方程 · 免疫卫士 首页">
+      <span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4.5 18.5 6.7V11c0 4.6-2.6 7.8-6.5 9.5C8.1 18.8 5.5 15.6 5.5 11V6.7Z"/></svg></span>
+      <span class="brand-name">生命方程 · 免疫卫士<small>Immune Guard</small></span>
     </a>
-    <div class="nav-right">
-      <a class="nav-link" href="index.html">首页</a>
-      <a class="nav-link" href="index.html#product">产品</a>
-      <a class="nav-link" href="index.html#science">科学</a>
-      <a class="nav-link is-current" href="download.html" aria-current="page">下载</a>
-      <a class="btn btn-pill" href="index.html#contact">预约体验</a>
-    </div>
+    <nav class="nav-desktop" aria-label="主导航">
+      <div><a class="nav-link" href="features.html">产品功能<svg class="ic car" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="dropdown"><a href="features.html#workbench"><b>健康工作台</b><small>状态分与四信号</small></a><a href="features.html#assistant"><b>AI 助手小卫</b><small>结合你的资料回答</small></a><a href="features.html#report"><b>报告解读</b><small>OCR + 核对确认</small></a><a href="features.html#trends"><b>健康趋势</b><small>个人基线与来源</small></a><a href="features.html#devices"><b>智能设备</b><small>戒指 / 手环</small></a></div>
+      </div>
+      <div><a class="nav-link" href="growth.html">健康成长<svg class="ic car" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="dropdown"><a href="growth.html#score"><b>免疫状态分</b><small>反映数据趋势</small></a><a href="growth.html#vp"><b>活力积分</b><small>记录你的行动</small></a><a href="growth.html#demo"><b>互动演示</b><small>试玩任务与徽章</small></a><a href="growth.html#season"><b>28 天赛季</b><small>好友与小队</small></a></div>
+      </div>
+      <div><a class="nav-link" href="guide.html">新手指南<svg class="ic car" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="dropdown"><a href="guide.html#t1"><b>第一次使用</b><small>7 步开始</small></a><a href="guide.html#t2"><b>连接智能戒指</b><small>蓝牙配对</small></a><a href="guide.html#t3"><b>上传体检报告</b><small>拍照 → 核对 → 解读</small></a><a href="guide.html#t4"><b>和小卫对话</b><small>示例问题</small></a></div>
+      </div>
+      <div><a class="nav-link" href="science.html">科学与安全<svg class="ic car" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="dropdown"><a href="science.html#basics"><b>科学依据</b><small>8 个问题</small></a><a href="science.html#cards"><b>科普卡片</b><small>免疫系统 / 体检 / HRV / 睡眠</small></a><a href="science.html#boundary"><b>医学边界</b><small>何时应该就医</small></a><a href="legal.html"><b>隐私与安全</b><small>授权与数据</small></a></div>
+      </div>
+      <div><a class="nav-link" href="about.html">关于我们<svg class="ic car" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="dropdown"><a href="about.html"><b>品牌介绍</b><small>生命方程是什么</small></a><a href="about.html#team"><b>团队</b><small>医学 × 工程 × 产品</small></a><a href="about.html#partner"><b>合作</b><small>企业与机构</small></a><a href="faq.html"><b>常见问题</b><small>24 个问题</small></a></div>
+      </div>
+      <a class="btn btn-nav" href="download.html">下载</a>
+      <a class="btn btn-nav" href="index.html#trial" style="background:#fff;color:var(--green-ink);border:1px solid var(--green-border)">预约体验</a>
+    </nav>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+      <svg class="ic ic-burger" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="ic ic-close" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <span class="sr-only">打开菜单</span>
+    </button>
   </div>
 </header>
 
-<main>
-  <!-- 下载首屏 -->
-  <section class="dl-hero">
-    <div class="container dl-hero-grid">
-      <div>
-        <span class="eyebrow">Android 客户端</span>
-        <h1>下载免疫卫士</h1>
-        <p class="lead">把免疫力变成一条可追踪、可解释、可行动的曲线。版本信息优先读取本站缓存，秒开，并在后台与 GitHub Release 自动校对。</p>
-
-        <div class="dl-meta" id="dl-meta">
-          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg><span id="meta-size">—</span></span>
-          <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M8 3v4M16 3v4M4 10h16"/></svg><span id="meta-date">—</span></span>
-          <span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M11 18h2"/></svg>Android 8.0 及以上</span>
-        </div>
-
-        <div class="dl-actions">
-          <a class="btn btn-primary" id="dl-primary" href="#" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg>
-            下载 APK
-          </a>
-          <a class="btn btn-ghost" id="dl-github" href="#" target="_blank" rel="noopener noreferrer">查看全部版本</a>
-        </div>
-
-        <p class="dl-note">安装时系统会提示「未知来源应用」，需在设置中允许浏览器安装应用。本页只提供安装包，App 内的健康解读内容仅供参考，不能替代临床诊断。</p>
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav class="mobile-menu-nav" aria-label="移动端导航">
+    <details class="mm-group"><summary>产品功能</summary><div class="mm-sub"><a href="features.html">全部功能</a><a href="features.html#workbench">健康工作台</a><a href="features.html#assistant">AI 助手小卫</a><a href="features.html#report">报告解读</a><a href="features.html#trends">健康趋势</a><a href="features.html#devices">智能设备</a></div></details>
+    <details class="mm-group"><summary>健康成长</summary><div class="mm-sub"><a href="growth.html">健康成长中心</a><a href="growth.html#score">免疫状态分</a><a href="growth.html#vp">活力积分</a><a href="growth.html#demo">互动演示</a><a href="growth.html#season">28 天赛季</a></div></details>
+    <details class="mm-group"><summary>新手指南</summary><div class="mm-sub"><a href="guide.html">全部教程</a><a href="guide.html#t1">第一次使用</a><a href="guide.html#t2">连接智能戒指</a><a href="guide.html#t3">上传体检报告</a><a href="guide.html#t4">和小卫对话</a></div></details>
+    <details class="mm-group"><summary>科学与安全</summary><div class="mm-sub"><a href="science.html">科学依据</a><a href="science.html#cards">科普卡片</a><a href="science.html#boundary">何时应该就医</a><a href="legal.html">隐私与安全</a></div></details>
+    <details class="mm-group"><summary>关于我们</summary><div class="mm-sub"><a href="about.html">品牌介绍</a><a href="about.html#team">团队</a><a href="about.html#partner">合作</a><a href="faq.html">常见问题</a></div></details>
+    <div class="mm-cta"><a class="btn btn-primary btn-block" href="download.html">下载 App</a><a class="btn btn-ghost btn-block" href="index.html#trial">预约体验</a></div>
+  </nav>
+</div>
+<main id="main">
+<section class="dl-hero">
+  <div class="container dl-grid">
+    <div class="dl-main">
+      <p class="crumbs"><a href="index.html">首页</a><span>下载</span></p>
+      <p class="eyebrow" style="margin-top:18px">Android 版 · v<span id="vc-ver">0.9.0</span></p>
+      <p class="small muted" style="margin-top:10px" id="vc-date">最新版本</p>
+      <h1>下载免疫卫士</h1>
+      <p class="lead">目前只提供 Android 版本，安装包约 <span id="meta-size">59 MB</span>，<span id="meta-date">最新版本</span>。iOS 版本尚未发布。</p>
+      <div class="dl-meta">
+        <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M10.5 18h3"/></svg>Android 10 及以上</span>
+        <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v10m0 0 3.5-3.5M12 14l-3.5-3.5M5 18.5h14"/></svg>直接下载 APK</span>
+        <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5 18.5 6.7V11c0 4.6-2.6 7.8-6.5 9.5C8.1 18.8 5.5 15.6 5.5 11V6.7Z"/></svg>免费使用</span>
       </div>
-
-      <aside class="version-card" aria-live="polite">
-        <p class="vc-label">最新版本</p>
-        <p class="vc-ver" id="vc-ver">—</p>
-        <p class="vc-date" id="vc-date">正在获取版本信息…</p>
-        <dl class="vc-rows">
-          <div class="vc-row"><dt>安装包大小</dt><dd id="vc-size">—</dd></div>
-          <div class="vc-row"><dt>发布时间</dt><dd id="vc-published">—</dd></div>
-          <div class="vc-row"><dt>下载次数</dt><dd id="vc-downloads">—</dd></div>
-        </dl>
-        <p class="vc-hash" id="vc-hash"></p>
-        <p class="vc-date" id="data-stamp"></p>
-      </aside>
+      <div class="dl-actions">
+        <a class="btn btn-primary btn-lg" id="dl-primary" href="https://github.com/Handsome5201314/immune-guard-site/releases">下载最新版本 APK<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v10m0 0 3.5-3.5M12 14l-3.5-3.5M5 18.5h14"/></svg></a>
+        <a class="btn btn-ghost btn-lg" id="dl-github" href="https://github.com/Handsome5201314/immune-guard-site/releases" target="_blank" rel="noopener">查看所有版本</a>
+      </div>
+      <p class="dl-note">下载后如提示「未知来源」，需要在系统设置中允许本次安装。安装包来自我们的公开分发仓库，可用下面的 SHA-256 校验完整性。</p>
+      <p class="dl-hash" id="vc-hash"></p>
     </div>
-  </section>
 
-  <!-- 更新日志 -->
-  <section class="section section-tint" id="changelog">
-    <div class="container">
-      <div class="section-head">
-        <h2>更新日志</h2>
-        <p>最新版本来自 Release 发布说明原文；更早的版本只做存档，不再提供安装包下载。</p>
-      </div>
-      <div class="state state-loading is-on" id="log-state">正在读取版本记录…</div>
-      <div id="release-list"></div>
-      <div class="release-more">
-        <a class="btn btn-ghost" id="dl-github-2" href="#" target="_blank" rel="noopener noreferrer">在 GitHub 查看完整历史</a>
-      </div>
-    </div>
-  </section>
+    <aside class="dl-card">
+      <h2>手机扫码打开本页</h2>
+      <div class="qr"><img src="assets/qr-download.png" alt="扫码打开免疫卫士下载页的二维码" width="440" height="440"></div>
+      <p>扫码后在手机上点击下载按钮。二维码指向本页地址，不包含任何追踪参数。</p>
+      <dl class="ver-list">
+        <div><dt>大小</dt><dd id="vc-size">—</dd></div>
+        <div><dt>发布时间</dt><dd id="vc-published">—</dd></div>
+        <div><dt>累计下载</dt><dd id="vc-downloads">—</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
 
-  <!-- 安装步骤 -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>三步装好</h2>
-        <p>安卓手机直接安装，不需要应用商店。</p>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <span class="step-no">1</span>
-          <h3>下载安装包</h3>
-          <p>点击「下载 APK」，文件约 50–70MB。请用手机浏览器下载，微信内置浏览器可能拦截。</p>
-        </div>
-        <div class="step">
-          <span class="step-no">2</span>
-          <h3>允许安装</h3>
-          <p>打开文件时系统提示「未知来源」，进入设置允许该浏览器安装应用，再返回继续。</p>
-        </div>
-        <div class="step">
-          <span class="step-no">3</span>
-          <h3>连接设备</h3>
-          <p>首次打开按引导授权蓝牙，扫描戒指或手环完成配对，即可开始夜间采集。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section section-tint">
-    <div class="container">
-      <div class="section-head"><h2>常见问题</h2></div>
-      <div class="faq">
-        <details>
-          <summary>为什么不在应用商店上架？</summary>
-          <div class="faq-body">当前处于内测阶段，采用独立安装包分发，便于快速迭代。正式版本将按渠道要求提交审核。</div>
-        </details>
-        <details>
-          <summary>安装后提示「解析包错误」怎么办？</summary>
-          <div class="faq-body">多数是下载不完整。请删除文件后重新下载，并核对页面显示的安装包大小是否一致。</div>
-        </details>
-        <details>
-          <summary>iOS 能用吗？</summary>
-          <div class="faq-body">暂只提供 Android 版本。iOS 版本尚未发布，可先预约体验，上线后我们会通知。</div>
-        </details>
-        <details>
-          <summary>数据会上传吗？</summary>
-          <div class="faq-body">生理数据与报告用于生成你的趋势与解读，传输与存储均加密。具体范围与删除方式见隐私政策。</div>
-        </details>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
+<section class="section section-tint" aria-labelledby="steps-title">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href="index.html">
-          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4l6 2.2v4.6c0 3.8-2.5 6.4-6 8.2-3.5-1.8-6-4.4-6-8.2V6.2L12 4z"/></svg></span>
-          生命方程 · 免疫卫士
-        </a>
-        <p>把免疫力变成一条可追踪、可解释、可行动的曲线。</p>
-      </div>
-      <div class="footer-col">
-        <h4>产品</h4>
-        <a href="index.html#product">功能</a>
-        <a href="index.html#hardware">硬件</a>
-        <a href="index.html#report">报告解读</a>
-        <a href="download.html">下载</a>
-      </div>
-      <div class="footer-col">
-        <h4>关于</h4>
-        <a href="index.html#science">科学</a>
-        <a href="index.html#contact">联系我们</a>
-        <a id="footer-github" href="#" target="_blank" rel="noopener noreferrer">GitHub Releases</a>
-      </div>
+    <header class="section-head"><h2 id="steps-title" style="font-size:32px">装好之后，三步开始</h2><p class="section-sub">详细操作见<a href="guide.html" style="color:var(--green-ink);font-weight:600">新手指南</a>，这里是精简版。</p></header>
+    <div class="req-grid">
+      <div class="req"><h3>1 · 注册并填写基础信息</h3><ul>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>手机号或邮箱注册</li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>年龄、性别、身高体重用于计算个人基线</li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>按需开启六类数据授权</li>
+      </ul></div>
+      <div class="req"><h3>2 · 连接设备（可选）</h3><ul>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><b>免疫卫士 Ring（MR11）</b>：App 内搜索并配对，可读心率、血氧、皮温、HRV、睡眠</li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg><b>华为手环 Band 11</b>：内测中，心率尚未验证，暂不建议作为主力设备</li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>其他品牌暂不支持</li>
+      </ul></div>
+      <div class="req"><h3>3 · 上传第一份体检报告</h3><ul>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>拍清楚检验项目页</li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>逐项核对识别结果</li>
+        <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>确认后阅读逐项解读</li>
+      </ul></div>
     </div>
-    <div class="footer-bottom">
-      <span>本产品不提供诊断或治疗建议。所有解读内容仅供参考，不能替代临床诊断。</span>
-      <span>© 2026 生命方程 · 免疫卫士</span>
-      <span>京ICP备XXXXXXXX号</span>
+    <div class="device-warn"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p><b>关于手环：</b>官网不把内测中的设备写成「已支持」。华为手环目前能读到电量、步数、卡路里和睡眠，但心率协议尚未打通，连接也不够稳定。</p></div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="req-title">
+  <div class="container">
+    <header class="section-head"><h2 id="req-title" style="font-size:32px">系统要求</h2></header>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th scope="col">项目</th><th scope="col">要求</th><th scope="col">说明</th></tr></thead>
+        <tbody>
+          <tr><td>操作系统</td><td>Android 10 及以上</td><td>更低版本可能无法安装</td></tr>
+          <tr><td>蓝牙</td><td>支持 BLE 4.0+</td><td>连接戒指需要</td></tr>
+          <tr><td>存储空间</td><td>建议预留 200 MB</td><td>安装包约 60 MB（以右侧实际显示为准）</td></tr>
+          <tr><td>网络</td><td>首次登录需要</td><td>报告识别可离线完成</td></tr>
+          <tr><td>iOS</td><td>暂不支持</td><td>尚未发布，App Store 中搜索不到</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
-</footer>
+</section>
 
+<section class="section section-tint" id="changelog" aria-labelledby="log-title">
+  <div class="container">
+    <header class="section-head"><h2 id="log-title" style="font-size:32px">版本更新记录</h2><p class="section-sub">内容来自公开发布说明，与 GitHub Release 保持同步。</p></header>
+    <p class="log-state" id="log-state"><span class="dot"></span><span id="data-stamp">正在读取版本信息…</span></p>
+    <div id="release-list">
+      <div class="release"><div class="release-body"><p>版本信息加载中。若长时间没有内容，可直接访问 <a href="https://github.com/Handsome5201314/immune-guard-site/releases" id="dl-github-2" target="_blank" rel="noopener">GitHub 发布页</a>查看。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="src-title">
+  <div class="container">
+    <header class="section-head"><h2 id="src-title" style="font-size:32px">下载渠道说明</h2><p class="section-sub">我们只通过下面两个渠道分发安装包。其他来源的「免疫卫士」安装包与本站无关。</p></header>
+    <div class="source-dual">
+      <article class="src-card rec"><h3>GitHub Releases<span class="tag tag-live">推荐</span></h3><p>每次发布都会附带安装包与 SHA-256 校验值。页面上的下载按钮会优先指向这里的最新版本。</p><a class="btn btn-primary btn-sm" href="https://github.com/Handsome5201314/immune-guard-site/releases" target="_blank" rel="noopener">打开 Releases</a></article>
+      <article class="src-card"><h3>本页下载按钮</h3><p>与本页读取到的版本号一致。如果 GitHub 访问缓慢，按钮上的链接仍然指向同一个发布资源。</p><a class="btn btn-ghost btn-sm" href="#main">回到顶部下载</a></article>
+    </div>
+  </div>
+</section>
+</main>
 <script>
 (function () {
   "use strict";
@@ -556,5 +473,51 @@ ul{padding:0;list-style:none}
     });
 })();
 </script>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="brand"><span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4.5 18.5 6.7V11c0 4.6-2.6 7.8-6.5 9.5C8.1 18.8 5.5 15.6 5.5 11V6.7Z"/></svg></span><span class="brand-name">生命方程 · 免疫卫士<small>Immune Guard</small></span></p>
+        <p class="footer-tag">读懂身体信号，管理日常健康，让每一次改变都有迹可循。</p>
+      </div>
+      <nav class="footer-col" aria-label="产品">
+        <h4>产品</h4>
+        <a href="features.html">产品功能</a>
+        <a href="features.html#devices">智能设备</a>
+        <a href="growth.html">健康成长中心</a>
+        <a href="download.html">下载 App</a>
+      </nav>
+      <nav class="footer-col" aria-label="学习">
+        <h4>学习</h4>
+        <a href="guide.html">新手指南</a>
+        <a href="science.html">科学与安全</a>
+        <a href="faq.html">常见问题</a>
+      </nav>
+      <nav class="footer-col" aria-label="关于">
+        <h4>关于</h4>
+        <a href="about.html">品牌介绍</a>
+        <a href="about.html#team">团队</a>
+        <a href="about.html#partner">合作</a>
+        <a href="index.html#trial">预约体验</a>
+      </nav>
+      <nav class="footer-col" aria-label="法律与隐私">
+        <h4>法律与隐私</h4>
+        <a href="legal.html#privacy">隐私与数据说明</a>
+        <a href="legal.html#policy" class="is-pending" aria-disabled="true">隐私政策</a>
+        <a href="legal.html#terms" class="is-pending" aria-disabled="true">用户协议</a>
+        <a href="legal.html#disclaimer">健康管理免责声明</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">免疫卫士是健康管理辅助工具，不是医疗诊断系统。所有解读内容仅供参考，不能替代医生的面诊、诊断与治疗。如有持续不适，请及时就医。</p>
+      <div class="footer-meta">
+        <span>© 2026 生命方程 · 免疫卫士</span>
+        <span id="beian" data-pending="true">备案号待补齐</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,236 @@
+<script>
+(function () {
+  "use strict";
+
+  /* 公开分发仓库：只放 Release 与安装包，源码仓库保持私有 */
+  var SITE_REPO = "Handsome5201314/immune-guard-site";
+  var API = "https://api.github.com/repos/" + SITE_REPO + "/releases?per_page=8";
+  var GH_URL = "https://github.com/" + SITE_REPO + "/releases";
+  /* 同域缓存：由 scripts/sync_versions.py 生成，token 只在生成端使用，不下发到浏览器 */
+  var LOCAL_JSON = "version.json";
+  var state = { list: [], source: "", stamp: "" };
+
+  var el = function (id) { return document.getElementById(id); };
+
+  ["dl-github", "dl-github-2", "footer-github"].forEach(function (id) {
+    var a = el(id); if (a) a.href = GH_URL;
+  });
+
+  function fmtSize(bytes) {
+    if (!bytes || !isFinite(bytes)) return "—";
+    return (bytes / 1048576).toFixed(1) + " MB";
+  }
+  function fmtDate(iso) {
+    if (!iso) return "—";
+    var d = new Date(iso);
+    if (isNaN(d)) return "—";
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  function fmtNum(n) {
+    if (typeof n !== "number") return "—";
+    return n >= 10000 ? (n / 10000).toFixed(1) + " 万" : String(n);
+  }
+  function esc(t) {
+    return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function inline(t) {
+    return esc(t)
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>")
+      .replace(/\n/g, "<br>");
+  }
+  /* 极简 Markdown：只处理 Release 正文里实际出现的结构 */
+  function md(src) {
+    if (!src) return "<p>本次发布未提供说明。</p>";
+    var blocks = String(src).split(/\r?\n\s*\r?\n/);
+    /* 发布说明常以「## 版本标题」开头，卡片头部已显示版本，避免重复 */
+    if (blocks.length && /^##\s/.test(blocks[0].trim())) blocks.shift();
+    return blocks.map(function (block) {
+      var b = block.trim();
+      if (!b) return "";
+      if (/^---+$/.test(b)) return "<hr>";
+      if (/^###\s/.test(b)) return "<h4>" + inline(b.replace(/^###\s/, "")) + "</h4>";
+      if (/^##\s/.test(b)) return "<h3>" + inline(b.replace(/^##\s/, "")) + "</h3>";
+      if (/^[-*]\s/m.test(b)) {
+        var items = b.split(/\r?\n/).filter(function (l) { return /^[-*]\s/.test(l); });
+        return "<ul>" + items.map(function (l) { return "<li>" + inline(l.replace(/^[-*]\s/, "")) + "</li>"; }).join("") + "</ul>";
+      }
+      return "<p>" + inline(b) + "</p>";
+    }).join("");
+  }
+
+  function pickApk(rel) {
+    if (!rel.assets || !rel.assets.length) return null;
+    return rel.assets.filter(function (a) { return /\.apk$/i.test(a.name); })[0] || null;
+  }
+
+  function renderLatest(rel) {
+    var apk = pickApk(rel);
+    var ver = (rel.tag_name || "").replace(/^v/i, "");
+    el("vc-ver").textContent = "v" + ver;
+    el("vc-date").textContent = (rel.name || "最新版本")
+      .replace(/^免疫卫士\s*/i, "")
+      .replace(new RegExp("^v?" + ver.replace(/\./g, "\\.") + "\\s*[·\\-—]?\\s*"), "") || "最新版本";
+    el("vc-size").textContent = apk ? fmtSize(apk.size) : "—";
+    el("vc-published").textContent = fmtDate(rel.published_at);
+    el("vc-downloads").textContent = apk ? fmtNum(apk.download_count) : "—";
+    el("vc-hash").textContent = apk && apk.digest ? "SHA-256 " + String(apk.digest).replace(/^sha256:/, "") : "";
+    el("meta-size").textContent = apk ? fmtSize(apk.size) : "安装包获取中";
+    el("meta-date").textContent = fmtDate(rel.published_at) + " 发布";
+
+    var primary = el("dl-primary");
+    if (apk) {
+      primary.href = apk.browser_download_url;
+      primary.setAttribute("download", apk.name);
+      primary.removeAttribute("aria-disabled");
+    } else {
+      primary.href = GH_URL;
+      primary.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.open(GH_URL, "_blank", "noopener");
+      });
+    }
+  }
+
+  function fmtClock(d) {
+    return String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+  }
+
+  /* 把 GitHub Release 与本地缓存统一成同一形状，渲染层只认这一种 */
+  function fromGithub(rel) {
+    return {
+      tag_name: rel.tag_name || "",
+      name: rel.name || "",
+      published_at: rel.published_at || "",
+      body: rel.body || "",
+      prerelease: !!rel.prerelease,
+      assets: rel.assets || [],
+      __historical: false
+    };
+  }
+
+  function fromCache(raw, historical) {
+    var tag = raw.tag || "";
+    return {
+      tag_name: tag,
+      name: raw.name || "",
+      published_at: raw.publishedAt || raw.date || "",
+      body: raw.body || raw.note || "",
+      prerelease: false,
+      assets: (raw.size || raw.url) ? [{
+        name: "ImmunGuard-" + tag + ".apk",
+        size: raw.size || 0,
+        download_count: raw.downloads || 0,
+        digest: raw.digest ? "sha256:" + raw.digest : "",
+        browser_download_url: historical ? "" : (raw.url || "")
+      }] : [],
+      __historical: !!historical
+    };
+  }
+
+  function renderList(list) {
+    var box = el("release-list");
+    box.innerHTML = list.map(function (rel, index) {
+      var apk = pickApk(rel);
+      var tags = "";
+      if (rel.__historical) tags += '<span class="release-tag is-muted">历史版本</span>';
+      else if (index === 0) tags += '<span class="release-tag">最新</span>';
+      if (rel.prerelease) tags += '<span class="release-tag">预发布</span>';
+      return '<article class="release' + (rel.__historical ? ' is-history' : '') + '">' +
+        '<div class="release-head">' +
+          '<span class="release-ver">' + esc(rel.tag_name || "") + '</span>' +
+          tags +
+          '<span class="release-date">' + esc(fmtDate(rel.published_at)) + '</span>' +
+          (apk ? '<span class="release-date">' + esc(fmtSize(apk.size)) + '</span>' : '') +
+        '</div>' +
+        '<div class="release-body">' + md(rel.body) + '</div>' +
+        '</article>';
+    }).join("");
+  }
+
+  function renderStamp(mode) {
+    var s = el("data-stamp");
+    if (!s) return;
+    if (mode === "checked") s.textContent = "已与 GitHub 校对 · " + fmtClock(new Date());
+    else if (mode === "stale") s.textContent = state.stamp ? "版本数据生成于 " + state.stamp : "";
+    else s.textContent = state.stamp ? "版本数据生成于 " + state.stamp + " · 正在与 GitHub 校对…" : "";
+  }
+
+  function fail(msg) {
+    var s = el("log-state");
+    s.className = "state state-error is-on";
+    s.innerHTML = "版本信息暂时没取到（" + esc(msg) + "）。可直接前往 " +
+      '<a href="' + GH_URL + '" target="_blank" rel="noopener noreferrer">GitHub Releases</a> 查看与下载。';
+    el("vc-date").textContent = "暂时无法获取版本信息";
+  }
+
+  function paint(list) {
+    state.list = list;
+    el("log-state").className = "state";
+    renderLatest(list[0]);
+    renderList(list);
+  }
+
+  /* 后台校对：拿到更新就重绘；失败时若已有缓存则静默降级，不打扰访客 */
+  function refreshFromGithub(isPrimary) {
+    var settled = false;
+    var timer = setTimeout(function () {
+      if (settled) return;
+      settled = true;
+      if (isPrimary) fail("网络超时");
+      else renderStamp("stale");
+    }, 6000);
+
+    fetch(API, { headers: { Accept: "application/vnd.github+json" } })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (all) {
+        var list = (all || []).filter(function (r) {
+          return !r.draft && pickApk(r);
+        }).map(fromGithub);
+        if (!list.length) throw new Error("暂无已发布安装包");
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        /* 缓存里有、Release 里没有的旧版本继续保留，保证版本历史不断档 */
+        var liveTags = {};
+        list.forEach(function (r) { liveTags[r.tag_name] = true; });
+        var extra = state.list.filter(function (r) {
+          return r.__historical && !liveTags[r.tag_name];
+        });
+        paint(list.concat(extra));
+        renderStamp("checked");
+      })
+      .catch(function (e) {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        if (isPrimary) fail(e && e.message ? e.message : "网络异常");
+        else renderStamp("stale");
+      });
+  }
+
+  /* 1) 先读同域缓存：一次静态请求，通常几十毫秒 */
+  fetch(LOCAL_JSON, { cache: "no-store" })
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    })
+    .then(function (json) {
+      if (!json || !json.latest || !json.latest.tag) throw new Error("缓存格式不符");
+      state.stamp = json.generatedAt ? String(json.generatedAt).replace("T", " ").slice(0, 16) : "";
+      var cached = [fromCache(json.latest, false)].concat((json.history || []).map(function (h) {
+        return fromCache(h, true);
+      }));
+      paint(cached);
+      renderStamp("local");
+      refreshFromGithub(false);
+    })
+    .catch(function () {
+      /* 2) 缓存缺失或损坏：退回实时接口 */
+      refreshFromGithub(true);
+    });
+})();
+</script>

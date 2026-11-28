@@ -1,0 +1,57 @@
+// 互动演示功能测试：逐项点击任务，验证积分/等级/进度/徽章/重置是否按预期变化。
+const path=require('path'),fs=require('fs'),http=require('http');
+const PW=require(path.resolve(__dirname,'../../../../05-App/node_modules/playwright-core'));
+const ROOT=path.resolve(__dirname,'..');
+const MIME={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png','.json':'application/json'};
+const server=http.createServer((req,res)=>{let u=decodeURIComponent(req.url.split('?')[0]);if(u.endsWith('/'))u+='index.html';
+ const fp=path.join(ROOT,u); if(!fp.startsWith(ROOT)||!fs.existsSync(fp)||fs.statSync(fp).isDirectory()){res.writeHead(404);res.end();return;}
+ res.writeHead(200,{'Content-Type':MIME[path.extname(fp)]||'application/octet-stream'});fs.createReadStream(fp).pipe(res);});
+const fails=[];
+function eq(label,got,want){const ok=String(got)===String(want);console.log((ok?'  ok   ':'  FAIL ')+label+': '+got+(ok?'':' (expect '+want+')'));if(!ok)fails.push(label);}
+(async()=>{
+ await new Promise(r=>server.listen(0,'127.0.0.1',r));
+ const base='http://127.0.0.1:'+server.address().port+'/growth.html';
+ const b=await PW.chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
+ const ctx=await b.newContext({viewport:{width:1280,height:900}});
+ const p=await ctx.newPage();
+ const errs=[];p.on('pageerror',e=>errs.push(e.message));p.on('console',m=>{if(m.type()==='error')errs.push(m.text());});
+ await p.goto(base,{waitUntil:'networkidle'});
+ const g=s=>p.textContent(s).then(t=>(t||'').trim());
+ console.log('初始状态');
+ eq('vp', await g('[data-vp]'),'120');
+ eq('level', await g('[data-level]'),'探索者');
+ eq('next', await g('[data-next]'),'距「守护者」还差 180 VP');
+ eq('pct', await g('[data-pct]'),'10%');
+ eq('done', await g('[data-done]'),'0 / 6');
+ eq('earned badges', (await p.$$eval('.vp-badge.is-earned',e=>e.length)),0);
+ console.log('点击「补录今天的睡眠时长」(+10)');
+ await p.click('.vp-task[data-task="data"]');
+ eq('vp', await g('[data-vp]'),'130');
+ eq('task done class', await p.$eval('.vp-task[data-task="data"]',e=>e.classList.contains('is-done')),'true');
+ eq('task state text', await g('.vp-task[data-task="data"] .vp-task-state'),'已完成');
+ eq('badge 数据侦探 lit', await p.$eval('.vp-badge[data-badge="b1"]',e=>e.classList.contains('is-earned')),'true');
+ eq('badge state text', await g('.vp-badge[data-badge="b1"] .vp-badge-state'),'已点亮');
+ console.log('重复点击同一任务应无变化');
+ await p.click('.vp-task[data-task="data"]');
+ eq('vp unchanged', await g('[data-vp]'),'130');
+ console.log('点完剩余 5 项：总积分应为 120+10+20+15+10+10+15=200');
+ for(const t of ['sleep','activity','sedentary','learn','followup']) await p.click('.vp-task[data-task="'+t+'"]');
+ eq('vp total', await g('[data-vp]'),'200');
+ eq('level now', await g('[data-level]'),'探索者');
+ eq('next now', await g('[data-next]'),'距「守护者」还差 100 VP');
+ eq('pct now', await g('[data-pct]'),'50%');
+ eq('done now', await g('[data-done]'),'6 / 6');
+ eq('earned badges all', (await p.$$eval('.vp-badge.is-earned',e=>e.length)),6);
+ eq('season width', await p.$eval('[data-season]',e=>e.style.width),'100%');
+ eq('aria-pressed', await p.$eval('.vp-task[data-task="sleep"]',e=>e.getAttribute('aria-pressed')),'true');
+ console.log('重置');
+ await p.click('[data-reset]');
+ eq('vp after reset', await g('[data-vp]'),'120');
+ eq('done after reset', await g('[data-done]'),'0 / 6');
+ eq('badges after reset', (await p.$$eval('.vp-badge.is-earned',e=>e.length)),0);
+ eq('no js errors', errs.length,0);
+ if(errs.length) errs.forEach(e=>console.log('    error: '+e));
+ await b.close();server.close();
+ console.log(fails.length? '\nDEMO TEST FAIL: '+fails.length : '\nDEMO TEST PASS');
+ process.exit(fails.length?1:0);
+})();

@@ -3,315 +3,211 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>生命方程 · 免疫卫士｜看得见的免疫力</title>
-<meta name="description" content="戴一枚戒指，拍一张体检单，让每天的身体变化有据可查。生命方程 · 免疫卫士，把免疫力变成一条可追踪、可解释、可行动的曲线。">
+<title>生命方程 · 免疫卫士｜个人免疫健康管理平台 · 看得见的免疫力</title>
+<meta name="description" content="免疫卫士是生命方程旗下的个人免疫健康管理平台。通过智能戒指、体检报告 AI 解读与健康助手小卫，把分散的身体信号整合成可理解的个人健康趋势，让日常健康管理更简单、更有方向。">
+<meta name="keywords" content="免疫健康管理,AI健康助手,体检报告解读,智能戒指健康管理,HRV趋势,个人健康档案,健康行为管理">
+<meta name="theme-color" content="#10B981">
+<link rel="canonical" href="https://www.xiaozhiserver.cloud/immune-guard/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="生命方程 · 免疫卫士">
+<meta property="og:title" content="让身体的变化，看得见、读得懂、管得住。">
+<meta property="og:description" content="智能穿戴、体检报告与 AI 健康助手，把分散的身体信号整合成个人健康趋势。">
+<meta property="og:url" content="https://www.xiaozhiserver.cloud/immune-guard/">
+<meta property="og:image" content="https://www.xiaozhiserver.cloud/immune-guard/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%3E%3Crect%20width='24'%20height='24'%20rx='6'%20fill='%2310B981'/%3E%3Cpath%20d='M12%205l5.5%202v4c0%203.4-2.2%205.8-5.5%207.5C8.7%2016.8%206.5%2014.4%206.5%2011V7z'%20fill='none'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="preload" as="image" href="assets/ip.webp">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.xiaozhiserver.cloud/immune-guard/#website","name":"生命方程 · 免疫卫士","alternateName":"Immune Guard","url":"https://www.xiaozhiserver.cloud/immune-guard/","inLanguage":"zh-CN","description":"个人免疫健康管理平台"}
+</script>
 <style>
-/* ============ 设计 Token（任务书写死，不得自行优化） ============ */
-:root{
-  --green:#10B981;
-  --green-dark:#059669;
-  --green-bg:#ECFDF5;
-  --green-border:#A7F3D0;
-  --green-ink:#047857;
-  --ink:#0F172A;
-  --ink-2:#64748B;
-  --ink-3:#94A3B8;
-  --line:#E2E8F0;
-  --bg-tint:#F8FAFC;
-  --card:#FFFFFF;
-  --bg-page:#FFFFFF;
-  --amber:#F59E0B;
-  --amber-bg:#FEF3C7;
-  --amber-ink:#B45309;
-  --shadow:0 4px 16px rgba(15,23,42,.06);
-  --r-card:20px;
-  --r-small:16px;
-  --r-btn:14px;
-  --nav-h:76px;
-}
-
-/* ============ 基础 ============ */
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-body{
-  margin:0;
-  background:var(--bg-page);
-  color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
-  font-size:17px;
-  line-height:1.75;
-  font-weight:400;
-  font-variant-numeric:tabular-nums;
-  overflow-x:hidden;
-}
-h1,h2,h3,p,ul,figure{margin:0;padding:0}
-ul{list-style:none}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-button{font:inherit;border:0;background:none;cursor:pointer;color:inherit;padding:0}
-:focus-visible{outline:2px solid var(--green);outline-offset:2px}
-::selection{background:rgba(16,185,129,.18)}
-.container{max-width:1200px;margin:0 auto;padding-left:24px;padding-right:24px}
-.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.skip-link{position:absolute;left:12px;top:-48px;z-index:120;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:10px 16px;font-size:14px;color:var(--ink);transition:top .15s ease}
-.skip-link:focus-visible{top:12px}
-[id]{scroll-margin-top:calc(var(--nav-h) + 12px)}
-
-/* ============ 图标 ============ */
-.ic{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
-
-/* ============ 按钮 ============ */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:500;transition:background-color .18s ease,border-color .18s ease,color .18s ease,transform .18s ease}
-.btn-primary{background:var(--green);color:#fff;border-radius:var(--r-btn);height:52px;padding:0 30px;font-size:16px}
-.btn-primary:hover{background:var(--green-dark)}
-.btn-primary:active{transform:translateY(1px)}
-.btn-primary .ic{transition:transform .18s ease}
-.btn-primary:hover .ic{transform:translateX(2px)}
-.btn-nav{height:40px;padding:0 20px;border-radius:999px;font-size:15px;background:var(--green);color:#fff}
-.btn-nav:hover{background:var(--green-dark)}
-
-/* ============ 顶部导航 ============ */
-.site-header{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.85);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.header-inner{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:inline-flex;align-items:center;gap:10px}
-.brand-mark{width:28px;height:28px;border-radius:8px;background:var(--green);display:inline-flex;align-items:center;justify-content:center;color:#fff}
-.brand-name{font-size:15px;font-weight:600;letter-spacing:.01em}
-.nav-desktop{display:flex;align-items:center;gap:32px}
-.nav-desktop a{font-size:15px;color:var(--ink-2);transition:color .15s ease}
-.nav-desktop a:hover{color:var(--ink)}
-.nav-desktop .btn-nav{margin-left:8px;color:#fff}
-.nav-toggle{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:var(--card);align-items:center;justify-content:center;color:var(--ink)}
-.nav-toggle .ic-close{display:none}
-.nav-toggle.is-active .ic-burger{display:none}
-.nav-toggle.is-active .ic-close{display:block}
-
-/* ============ 移动端菜单 ============ */
-.mobile-menu{position:fixed;inset:0;z-index:70;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);padding:calc(var(--nav-h) + 32px) 24px 48px}
-@media (prefers-reduced-motion:no-preference){.mobile-menu{animation:menuIn .18s ease-out}}
-@keyframes menuIn{from{opacity:0}to{opacity:1}}
-.mobile-menu-nav{display:flex;flex-direction:column;align-items:center;max-width:360px;margin:0 auto}
-.mobile-menu-nav a:not(.btn){font-size:22px;font-weight:600;color:var(--ink);padding:16px 0;width:100%;text-align:center}
-.mobile-menu-nav a:not(.btn):hover{color:var(--green-dark)}
-.mobile-menu-nav .btn{margin-top:24px;width:100%}
-body.no-scroll{overflow:hidden}
-
-/* ============ 首屏 Hero ============ */
-.hero{overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:46fr 54fr;align-items:center;column-gap:clamp(24px,4vw,56px);min-height:calc(100vh - var(--nav-h))}
+/* ===== 首页专属 ===== */
+.hero{overflow:hidden;background:radial-gradient(1100px 520px at 8% -8%,rgba(16,185,129,.16),transparent 60%),radial-gradient(900px 420px at 92% 0%,rgba(139,124,246,.1),transparent 60%)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center;gap:40px;min-height:calc(100vh - var(--nav-h));padding:48px 0 56px}
 @supports (height:100svh){.hero-grid{min-height:calc(100svh - var(--nav-h))}}
-.hero-copy{max-width:520px;padding:32px 0 48px}
-.eyebrow{display:inline-flex;align-items:center;background:var(--green-bg);border:1px solid var(--green-border);color:var(--green-ink);font-size:14px;border-radius:999px;padding:6px 16px;line-height:1.6}
-.hero-copy h1{margin:20px 0 0;font-size:68px;font-weight:600;line-height:1.15;letter-spacing:-.02em;color:var(--ink)}
+.hero-copy h1{margin-top:20px;font-size:60px;font-weight:600;line-height:1.16;letter-spacing:-.022em}
 .hero-copy h1 span{display:block}
-.hero-sub{margin:20px 0 32px;font-size:17px;color:var(--ink-2);max-width:470px}
-.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 24px}
-.hero-more{font-size:15px;color:var(--ink-2);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--ink-3);transition:color .15s ease}
-.hero-more:hover{color:var(--ink)}
-.trust{margin-top:44px;display:flex;flex-wrap:wrap;gap:12px 28px}
-.trust li{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-3)}
-
-/* ---- 首屏视觉（光晕 / 同心圆 / 角色 / 手机卡片 / 浮动胶囊） ---- */
-.hero-visual{position:relative;height:580px}
-.hero-stage{position:absolute;left:41%;top:0;width:620px;height:580px;transform:translateX(-50%) scale(var(--stage-scale,1));transform-origin:top center}
-.hero-ring{position:absolute;left:50%;top:50%;width:620px;height:620px;margin:-310px 0 0 -310px;border:1px solid rgba(16,185,129,.10);border-radius:50%}
-.hero-halo{position:absolute;left:50%;top:50%;width:560px;height:560px;margin:-280px 0 0 -280px;background:radial-gradient(circle,rgba(16,185,129,.10),rgba(16,185,129,0) 68%);border-radius:50%;z-index:4;mix-blend-mode:multiply;pointer-events:none}
-.hero-float-avatar{position:absolute;left:50%;top:50%;margin:-210px 0 0 -210px;width:420px;height:420px}
-.hero-avatar{width:420px;height:420px;max-width:none;object-fit:contain;transform:translateX(-6%)}
-.hero-float-phone{position:absolute;right:0;bottom:0;z-index:3}
-.phone-card{width:240px;background:var(--card);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:18px;transform:rotate(-3deg)}
-.phone-date{font-size:13px;line-height:1.6;color:var(--ink-3)}
-.phone-score{display:flex;align-items:center;gap:10px;margin-top:6px}
-.score-num{font-size:56px;font-weight:600;line-height:1;color:var(--ink)}
-.score-pill{background:var(--green-bg);color:var(--green-ink);font-size:12px;border-radius:999px;padding:4px 10px;line-height:1.6}
-.phone-metrics{margin:16px 0 4px}
-.phone-metrics li{height:44px;display:flex;align-items:center;gap:10px;color:var(--ink)}
-.phone-metrics .ic{width:16px;height:16px;color:var(--green)}
-.m-name{font-size:15px;color:var(--ink)}
-.m-val{margin-left:auto;font-size:15px;color:var(--ink)}
-.m-unit{font-size:12px;color:var(--ink-3);margin-left:3px}
-.phone-chart{display:block;width:100%;height:72px;margin:8px 0 14px}
-.phone-btn{display:flex;align-items:center;justify-content:center;background:var(--green);color:#fff;border-radius:999px;font-size:14px;height:38px}
-.hero-chip{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-small);box-shadow:var(--shadow);padding:10px 14px;font-size:13px;line-height:1.6;color:var(--ink-2)}
-.hero-chip .ic{width:16px;height:16px;color:var(--green)}
-.hero-chip-left{left:0;top:42%}
-.hero-chip-bottom{left:15%;bottom:2%}
+.hero-copy h1 .hl{color:var(--green-ink)}
+.hero-sub{margin:18px 0 28px;font-size:18px;color:var(--ink-2);max-width:520px;line-height:1.75}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-visual{position:relative;min-height:560px}
+.hv-stage{position:absolute;inset:0;display:grid;place-items:center}
+.hv-ring{position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid rgba(16,185,129,.18)}
+.hv-ring.r2{width:660px;height:660px;border-color:rgba(16,185,129,.08)}
+.hv-halo{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.2),rgba(16,185,129,0) 68%)}
+.hv-ip{position:relative;z-index:3;width:360px;max-width:70%;filter:drop-shadow(0 30px 40px rgba(6,95,70,.25))}
+.hv-phone{position:absolute;right:0;bottom:6%;z-index:4}
+.hv-chip{position:absolute;z-index:5;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:10px 14px;font-size:13px;line-height:1.5;color:var(--ink-2);white-space:nowrap}
+.hv-chip b{color:var(--ink);font-weight:600}
+.hv-chip .ic{width:16px;height:16px;color:var(--green)}
+.hv-chip-a{left:0;top:26%}
+.hv-chip-b{left:6%;bottom:10%}
+.hv-chip-c{right:4%;top:8%;border-color:#FDE4B5;background:#FFF9EC;color:var(--amber-ink)}
+.hv-chip-c .ic{color:var(--amber)}
 @media (min-width:1024px) and (prefers-reduced-motion:no-preference){
-  .hero-float-avatar{animation:floatY 6s ease-in-out infinite}
-  .hero-float-phone{animation:floatY 6s ease-in-out -3s infinite}
-  .hero-chip-left{animation:floatY 6s ease-in-out -1.5s infinite}
-  .hero-chip-bottom{animation:floatY 6s ease-in-out -4.5s infinite}
+  .hv-ip{animation:floatY 7s ease-in-out infinite}
+  .hv-phone{animation:floatY 7s ease-in-out -3.5s infinite}
+  .hv-chip-a{animation:floatY 7s ease-in-out -1.5s infinite}
+  .hv-chip-b{animation:floatY 7s ease-in-out -5s infinite}
 }
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 
-/* ============ 分段通用 ============ */
-.section{margin-top:120px}
-.section .container{padding-top:0;padding-bottom:0}
-.section-head h2,.hardware-copy h2,.cta-box h2{font-size:40px;font-weight:600;line-height:1.25;color:var(--ink)}
-.section-sub{margin-top:16px;font-size:17px;color:var(--ink-2);max-width:640px}
-.section-head{margin-bottom:48px}
-.section-tinted{background:var(--bg-tint)}
-.section-tinted .container{padding-top:96px;padding-bottom:96px}
-#contact .container{padding-bottom:120px}
+.idea-list{display:grid;border:1px solid var(--line);border-radius:var(--r-card);background:#fff;overflow:hidden}
+.idea{display:grid;grid-template-columns:56px minmax(0,1fr) minmax(0,1.3fr);gap:20px;padding:24px 28px;align-items:start;border-top:1px solid var(--line-2);transition:background .2s}
+.idea:first-child{border-top:0}
+.idea:hover{background:var(--bg-tint)}
+.idea-no{font-size:14px;font-weight:700;color:var(--green-ink);background:var(--green-bg);border-radius:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+.idea h3{font-size:18px}
+.idea p{font-size:15px;color:var(--ink-2);line-height:1.75}
 
-/* ============ 段 2 · 采读转闭环 ============ */
-.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--shadow);padding:28px}
-.card-icon{width:48px;height:48px;border-radius:var(--r-small);background:var(--green-bg);color:var(--green);display:inline-flex;align-items:center;justify-content:center}
-.card-icon .ic{width:24px;height:24px}
-.card h3{margin:20px 0 10px;font-size:20px;font-weight:600;color:var(--ink)}
-.card p{font-size:16px;line-height:1.75;color:var(--ink-2)}
-.card-no{margin-top:auto;padding-top:28px;font-size:13px;line-height:1.6;color:var(--ink-3)}
+.persona{position:relative;padding:28px;border-radius:var(--r-card);border:1px solid var(--line);background:#fff;overflow:hidden;display:flex;flex-direction:column;min-height:100%}
+.persona::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--pc,var(--green))}
+.persona-head{display:flex;align-items:center;gap:14px}
+.persona-av{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;color:#fff;background:var(--pc,var(--green));flex:none}
+.persona h3{font-size:18px}
+.persona .role{font-size:13px;color:var(--ink-3)}
+.persona dl{margin-top:18px;display:grid;gap:14px;flex:1;align-content:start}
+.persona dt{font-size:12.5px;font-weight:600;color:var(--ink-4);letter-spacing:.04em;margin-bottom:4px}
+.persona dd{font-size:14.5px;color:var(--ink-2);line-height:1.7}
+.persona dd.help{color:var(--ink);background:var(--bg-tint);border-radius:10px;padding:10px 12px}
+.persona dd.help b{color:var(--green-ink)}
 
-/* ============ 段 3 · 硬件 ============ */
-.hardware-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;column-gap:64px}
-.hardware-copy h2{margin-bottom:16px}
-.hardware-copy p{font-size:17px;color:var(--ink-2);max-width:460px}
-.hardware-visual{display:flex;flex-direction:column;align-items:center;gap:14px}
-.ring-card{width:400px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--shadow);padding:32px;display:flex;align-items:center;gap:24px}
-.ring-svg{width:190px;height:190px;flex:none}
-.ring-metrics{display:flex;flex-direction:column;gap:12px;margin:0 auto;font-size:14px;line-height:1.6;color:var(--ink-2)}
-.hardware-note{font-size:13px;line-height:1.6;color:var(--ink-3)}
-.hw-points{margin:32px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px;max-width:460px}
-.hw-points li{display:flex;gap:12px;font-size:15px;line-height:1.7;color:var(--ink-2)}
-.hw-points b{color:var(--ink);font-weight:600;margin-right:6px}
-.hw-dot{flex:none;width:6px;height:6px;border-radius:50%;background:var(--green);margin-top:11px}
+.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.flow-step{background:#fff;border:1px solid var(--line);border-radius:var(--r-card);padding:26px;position:relative}
+.flow-step .card-icon{width:42px;height:42px}
+.flow-step h3{margin-top:16px;font-size:19px}
+.flow-step p{margin-top:6px;font-size:14.5px;color:var(--ink-2)}
+.flow-step .step-tag{position:absolute;top:22px;right:22px;font-size:11.5px;font-weight:700;color:var(--ink-4);letter-spacing:.1em}
+.flow-arrow{display:none}
 
-/* ============ 段 4 · 报告解读 ============ */
-.report-card{max-width:880px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:var(--r-card);box-shadow:var(--shadow);padding:32px}
-.report-row{padding:20px 0}
-.report-row:first-of-type{padding-top:4px}
-.report-row + .report-row{border-top:1px solid var(--line)}
-.report-line{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;row-gap:8px}
-.r-name{font-size:16px;font-weight:500;color:var(--ink)}
-.r-val{font-weight:400}
-.r-ref{font-size:13px;line-height:1.6;color:var(--ink-3)}
-.pill{font-size:13px;line-height:1.6;border-radius:999px;padding:5px 14px;margin-left:auto}
-.pill-ok{background:var(--green-bg);color:var(--green-ink)}
-.pill-warn{background:var(--amber-bg);color:var(--amber-ink)}
-.r-note{margin-top:8px;font-size:14px;line-height:1.7;color:var(--ink-2)}
-.report-disclaimer{margin-top:20px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;line-height:1.6;color:var(--ink-3)}
+.dual{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.dual-card{border-radius:var(--r-card);padding:28px;color:#fff;position:relative;overflow:hidden;min-height:320px}
+.dual-score{background:linear-gradient(150deg,#065F46,#047857 60%,#059669)}
+.dual-vp{background:linear-gradient(150deg,#4C3FA0,#5B4DC4 55%,#8B7CF6)}
+.dual-card::after{content:"";position:absolute;right:-60px;bottom:-80px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.08)}
+.dual-card .dk{font-size:13px;font-weight:600;opacity:.85;letter-spacing:.02em}
+.dual-card h3{margin-top:6px;font-size:24px;color:#fff}
+.dual-card .en{font-size:12.5px;opacity:.65;margin-top:2px}
+.dual-card .dv{font-size:54px;font-weight:600;line-height:1;margin-top:20px}
+.dual-card .dv small{font-size:16px;font-weight:500;opacity:.7;margin-left:4px}
+.dual-card ul{margin-top:18px;display:grid;gap:7px;font-size:14px;opacity:.92}
+.dual-card ul li{display:flex;gap:8px;align-items:flex-start;line-height:1.55}
+.dual-card ul li .ic{width:16px;height:16px;margin-top:3px;opacity:.8}
+.dual-card .dv-note{margin-top:14px;font-size:12.5px;opacity:.75}
+.dual-vs{grid-column:1/-1;text-align:center;font-size:15px;color:var(--ink-3);margin-top:-4px}
+.dual-vs b{color:var(--ink)}
 
-/* ============ 段 5 · 医学背书 ============ */
-.points-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.points-3 li{padding-top:4px}
-.points-3 .ic{width:24px;height:24px;color:var(--green)}
-.points-3 h3{margin:14px 0 8px;font-size:16px;font-weight:600;color:var(--ink)}
-.points-3 p{font-size:14px;line-height:1.7;color:var(--ink-2)}
+.feat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.feat{display:flex;gap:14px;padding:20px;border:1px solid var(--line);border-radius:var(--r-small);background:#fff;transition:border-color .2s,transform .2s var(--ease);align-items:flex-start}
+.feat:hover{border-color:var(--green-border);transform:translateY(-2px)}
+.feat .card-icon{width:40px;height:40px;border-radius:11px}
+.feat .card-icon .ic{width:19px;height:19px}
+.feat h3{font-size:16.5px;margin-top:0}
+.feat p{font-size:14px;margin-top:3px}
 
-/* ============ 段 6 · CTA + 页脚 ============ */
-.cta-box{background:var(--green-bg);border-radius:24px;padding:64px;text-align:center}
-.cta-box h2{position:relative}
-.cta-sub{margin:16px auto 32px;max-width:520px;font-size:17px;color:var(--ink-2)}
-.cta-note{margin-top:16px;font-size:13px;line-height:1.6;color:var(--ink-3)}
-.site-footer{margin-top:120px;background:var(--bg-tint);border-top:1px solid var(--line);padding:64px 0 40px}
-.footer-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr);gap:48px}
-.footer-tag{margin-top:14px;max-width:320px;font-size:13px;line-height:1.6;color:var(--ink-2)}
-.footer-col h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:12px}
-.footer-col a{display:inline-block;padding:4px 0;font-size:15px;color:var(--ink-2);transition:color .15s ease}
-.footer-col a:hover{color:var(--ink)}
-.footer-bottom{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px}
-.footer-disclaimer{font-size:13px;line-height:1.6;color:var(--ink-3);flex:1 1 420px}
-.footer-meta{display:flex;gap:24px;font-size:13px;line-height:1.6;color:var(--ink-3)}
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.compare-col{border-radius:var(--r-card);padding:26px;border:1px solid var(--line)}
+.compare-col.old{background:#fff}
+.compare-col.new{background:var(--green-bg);border-color:var(--green-border)}
+.compare-col h3{font-size:18px}
+.compare-col ul{margin-top:14px;display:grid;gap:10px;font-size:15px;color:var(--ink-2)}
+.compare-col ul li{display:flex;gap:10px;line-height:1.6}
+.compare-col ul li .ic{width:18px;height:18px;margin-top:3px;flex:none}
+.compare-col.old ul li .ic{color:var(--ink-4)}
+.compare-col.new ul li .ic{color:var(--green-ink)}
+.compare-col.new ul li{color:var(--ink)}
 
-/* ============ 滚动淡入 ============ */
-.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.js .reveal.is-visible{opacity:1;transform:none}
-.cards-3>.reveal:nth-child(2),.points-3>.reveal:nth-child(2){transition-delay:.08s}
-.cards-3>.reveal:nth-child(3),.points-3>.reveal:nth-child(3){transition-delay:.16s}
-@media (prefers-reduced-motion:reduce){
-  .js .reveal{opacity:1;transform:none;transition:none}
+.trial{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:#fff;border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.trial-copy{padding:40px;background:linear-gradient(160deg,#065F46,#047857);color:#fff;display:flex;flex-direction:column;justify-content:center}
+.trial-copy h2{color:#fff;font-size:32px;line-height:1.25}
+.trial-copy p{margin-top:12px;color:rgba(255,255,255,.82);font-size:15.5px;line-height:1.75}
+.trial-copy ul{margin-top:18px;display:grid;gap:8px;font-size:14.5px}
+.trial-copy ul li{display:flex;gap:8px}
+.trial-copy ul li .ic{width:18px;height:18px;margin-top:3px;color:#A7F3D0}
+.trial-form{padding:40px}
+.trial-form h3{font-size:20px}
+.trial-form .form{margin-top:20px}
+.trial-form .btn{width:100%}
+
+.partner-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.partner{background:#fff;border:1px solid var(--line);border-radius:var(--r-small);padding:18px 16px;font-size:14.5px;font-weight:600;color:var(--ink);text-align:center;line-height:1.5}
+.partner span{display:block;font-size:12.5px;font-weight:400;color:var(--ink-3);margin-top:3px}
+
+@media (max-width:1199px){
+  .hero-copy h1{font-size:50px}
+  .hv-phone{right:0}
 }
-
-/* ============ 宽屏：容器放宽 ============ */
-@media (min-width:1440px){
-  .container{max-width:1240px}
-}
-
-/* ============ 中桌面 1024–1199 ============ */
-@media (min-width:1024px) and (max-width:1199px){
-  .hero-stage{--stage-scale:.82;left:36%}
-  .phone-card{width:220px}
-  .hero-copy h1{font-size:60px}
-}
-
-/* ============ 平板与窄窗 ≤1023：首屏单栏、字号降一档 ============ */
 @media (max-width:1023px){
-  body{font-size:16px}
-  .hero-grid{grid-template-columns:minmax(0,1fr);min-height:0;padding-top:40px;row-gap:8px}
-  .hero-copy{max-width:600px;padding:8px 0 0;min-width:0}
-  .hero-copy h1{font-size:54px}
-  .hero-sub{max-width:100%;margin:16px 0 28px}
-  .trust{margin-top:32px}
-  .hero-visual{height:430px;margin-top:20px}
-  .hero-stage{--stage-scale:.72}
-  .hero-float-phone{right:0}
-  .section-head h2,.hardware-copy h2,.cta-box h2{font-size:34px}
-  .cards-3,.points-3{grid-template-columns:1fr}
-  .card{max-width:640px}
-  .hardware-grid{grid-template-columns:1fr;row-gap:48px}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .footer-brand{grid-column:1/-1}
+  .hero-grid{grid-template-columns:minmax(0,1fr);min-height:0;padding:40px 0 48px;gap:28px}
+  .hero-copy h1{font-size:44px}
+  .hero-visual{min-height:520px}
+  .hv-ip{width:300px}
+  .hero-grid>.hero-visual{order:-1}
+  .idea{grid-template-columns:44px minmax(0,1fr)}
+  .idea p{grid-column:2}
+  .flow{grid-template-columns:minmax(0,1fr)}
+  .dual,.compare,.trial{grid-template-columns:minmax(0,1fr)}
+  .partner-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .feat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-
-/* ============ 导航折叠 ≤899（平板竖屏也走汉堡） ============ */
-@media (max-width:899px){
-  .nav-desktop{display:none}
-  .nav-toggle{display:inline-flex;position:relative;z-index:82}
-  .container{padding-left:20px;padding-right:20px}
-}
-
-/* ============ 手机 ≤639 ============ */
 @media (max-width:639px){
-  .ring-card{width:100%;max-width:330px;flex-direction:column;align-items:center;gap:16px;padding:24px}
-  .ring-svg{width:160px;height:160px}
-  .ring-metrics{flex-direction:row;gap:18px;margin:0}
-
-  .section{margin-top:72px}
-  #contact .container{padding-bottom:72px}
-  .hero-grid{padding-top:28px}
-  .hero-copy h1{font-size:40px;overflow-wrap:anywhere}
-  .hero-sub{font-size:16px}
-  .section-head h2,.hardware-copy h2,.cta-box h2{font-size:30px}
-  .section-head{margin-bottom:36px}
-  .hero-visual{height:330px;margin-top:24px}
-  .hero-stage{--stage-scale:.55}
-  .section-tinted .container{padding-top:64px;padding-bottom:64px}
-  .report-card{padding:24px}
-  .pill{margin-left:0}
-  .cta-box{padding:48px 24px}
-  .site-footer{padding-top:48px}
-  .footer-grid{grid-template-columns:1fr;gap:32px}
-  .footer-bottom{margin-top:40px}
+  .hero-grid{padding:28px 0 40px}
+  .hero-copy h1{font-size:36px}
+  .hero-sub{font-size:16.5px}
+  .hero-actions .btn{width:100%}
+  /* 移动端 Hero 视觉区改为纵向堆叠：角色在上、手机完整居中在下、信息牌静态排布，
+     不再绝对定位叠压（避免遮挡界面、避免手机框被视口裁切） */
+  .hero-visual{min-height:0;display:flex;flex-direction:column;align-items:center;gap:14px}
+  .hv-stage{position:relative;inset:auto;width:100%;height:260px}
+  .hv-ip{width:210px}
+  .hv-phone{position:static;right:auto;bottom:auto}
+  .hv-phone .phone{width:210px}
+  .hv-chip{position:static;white-space:normal;text-align:center;justify-content:center}
+  .hv-chip-c{right:auto}
+  .hv-ring{width:260px;height:260px}
+  .hv-ring.r2{width:320px;height:320px}
+  .hv-halo{width:260px;height:260px}
+  .idea{padding:20px}
+  .idea-no{width:38px;height:38px}
+  .dual-card{padding:22px;min-height:0}
+  .dual-card .dv{font-size:44px}
+  .feat-grid{grid-template-columns:minmax(0,1fr)}
+  .partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trial-copy,.trial-form{padding:26px 22px}
+  .trial-copy h2{font-size:26px}
 }
-
-/* ============ 小屏 ≤399 ============ */
-@media (max-width:359px){
-  .hero-copy h1{font-size:34px}
-  .hero-visual{height:290px}
-  .hero-stage{--stage-scale:.48}
-}
-
+@media (max-width:359px){.hero-copy h1{font-size:32px}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">跳到主要内容</a>
 
-<!-- ============ 顶部导航 ============ -->
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="#top" aria-label="生命方程 · 免疫卫士 首页">
-      <span class="brand-mark" aria-hidden="true">
-        <svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5 18.5 6.7 V11 C18.5 15.6 15.9 18.8 12 20.5 C8.1 18.8 5.5 15.6 5.5 11 V6.7 Z"/></svg>
-      </span>
-      <span class="brand-name">生命方程 · 免疫卫士</span>
+    <a class="brand" href="index.html" aria-label="生命方程 · 免疫卫士 首页">
+      <span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4.5 18.5 6.7V11c0 4.6-2.6 7.8-6.5 9.5C8.1 18.8 5.5 15.6 5.5 11V6.7Z"/></svg></span>
+      <span class="brand-name">生命方程 · 免疫卫士<small>Immune Guard</small></span>
     </a>
     <nav class="nav-desktop" aria-label="主导航">
-      <a href="#product">产品</a>
-      <a href="#science">科学</a>
-      <a href="download.html">下载</a>
-      <a class="btn btn-nav" href="#contact">预约体验</a>
+      <div><a class="nav-link" href="features.html">产品功能<svg class="ic car" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="dropdown"><a href="features.html#workbench"><b>健康工作台</b><small>状态分与四信号</small></a><a href="features.html#assistant"><b>AI 助手小卫</b><small>结合你的资料回答</small></a><a href="features.html#report"><b>报告解读</b><small>OCR + 核对确认</small></a><a href="features.html#trends"><b>健康趋势</b><small>个人基线与来源</small></a><a href="features.html#devices"><b>智能设备</b><small>戒指 / 手环</small></a></div>
+      </div>
+      <div><a class="nav-link" href="growth.html">健康成长<svg class="ic car" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="dropdown"><a href="growth.html#score"><b>免疫状态分</b><small>反映数据趋势</small></a><a href="growth.html#vp"><b>活力积分</b><small>记录你的行动</small></a><a href="growth.html#demo"><b>互动演示</b><small>试玩任务与徽章</small></a><a href="growth.html#season"><b>28 天赛季</b><small>好友与小队</small></a></div>
+      </div>
+      <div><a class="nav-link" href="guide.html">新手指南<svg class="ic car" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="dropdown"><a href="guide.html#t1"><b>第一次使用</b><small>7 步开始</small></a><a href="guide.html#t2"><b>连接智能戒指</b><small>蓝牙配对</small></a><a href="guide.html#t3"><b>上传体检报告</b><small>拍照 → 核对 → 解读</small></a><a href="guide.html#t4"><b>和小卫对话</b><small>示例问题</small></a></div>
+      </div>
+      <div><a class="nav-link" href="science.html">科学与安全<svg class="ic car" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="dropdown"><a href="science.html#basics"><b>科学依据</b><small>8 个问题</small></a><a href="science.html#cards"><b>科普卡片</b><small>免疫系统 / 体检 / HRV / 睡眠</small></a><a href="science.html#boundary"><b>医学边界</b><small>何时应该就医</small></a><a href="legal.html"><b>隐私与安全</b><small>授权与数据</small></a></div>
+      </div>
+      <div><a class="nav-link" href="about.html">关于我们<svg class="ic car" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+        <div class="dropdown"><a href="about.html"><b>品牌介绍</b><small>生命方程是什么</small></a><a href="about.html#team"><b>团队</b><small>医学 × 工程 × 产品</small></a><a href="about.html#partner"><b>合作</b><small>企业与机构</small></a><a href="faq.html"><b>常见问题</b><small>24 个问题</small></a></div>
+      </div>
+      <a class="btn btn-nav" href="download.html">下载</a>
+      <a class="btn btn-nav" href="index.html#trial" style="background:#fff;color:var(--green-ink);border:1px solid var(--green-border)">预约体验</a>
     </nav>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
       <svg class="ic ic-burger" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -321,394 +217,353 @@ body.no-scroll{overflow:hidden}
   </div>
 </header>
 
-<!-- 移动端全屏菜单 -->
 <div class="mobile-menu" id="mobile-menu" hidden>
   <nav class="mobile-menu-nav" aria-label="移动端导航">
-    <a href="#product">产品</a>
-    <a href="#science">科学</a>
-    <a href="download.html">下载</a>
-    <a class="btn btn-primary" href="#contact">预约体验</a>
+    <details class="mm-group"><summary>产品功能</summary><div class="mm-sub"><a href="features.html">全部功能</a><a href="features.html#workbench">健康工作台</a><a href="features.html#assistant">AI 助手小卫</a><a href="features.html#report">报告解读</a><a href="features.html#trends">健康趋势</a><a href="features.html#devices">智能设备</a></div></details>
+    <details class="mm-group"><summary>健康成长</summary><div class="mm-sub"><a href="growth.html">健康成长中心</a><a href="growth.html#score">免疫状态分</a><a href="growth.html#vp">活力积分</a><a href="growth.html#demo">互动演示</a><a href="growth.html#season">28 天赛季</a></div></details>
+    <details class="mm-group"><summary>新手指南</summary><div class="mm-sub"><a href="guide.html">全部教程</a><a href="guide.html#t1">第一次使用</a><a href="guide.html#t2">连接智能戒指</a><a href="guide.html#t3">上传体检报告</a><a href="guide.html#t4">和小卫对话</a></div></details>
+    <details class="mm-group"><summary>科学与安全</summary><div class="mm-sub"><a href="science.html">科学依据</a><a href="science.html#cards">科普卡片</a><a href="science.html#boundary">何时应该就医</a><a href="legal.html">隐私与安全</a></div></details>
+    <details class="mm-group"><summary>关于我们</summary><div class="mm-sub"><a href="about.html">品牌介绍</a><a href="about.html#team">团队</a><a href="about.html#partner">合作</a><a href="faq.html">常见问题</a></div></details>
+    <div class="mm-cta"><a class="btn btn-primary btn-block" href="download.html">下载 App</a><a class="btn btn-ghost btn-block" href="index.html#trial">预约体验</a></div>
   </nav>
 </div>
 
 <main id="main">
 
-  <!-- ============ 段 1 · 首屏 Hero ============ -->
-  <section class="hero" id="top" aria-labelledby="hero-title">
-    <div class="container hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">免疫健康管理</p>
-        <h1 id="hero-title"><span>看得见的</span><span>免疫力</span></h1>
-        <p class="hero-sub">戴一枚戒指，拍一张体检单，让每天的身体变化有据可查。</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">开始记录
-            <svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg>
-          </a>
-          <a class="hero-more" href="#product">了解原理</a>
+<!-- ===== Hero ===== -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">生命方程 · 个人免疫健康管理平台</p>
+      <h1 id="hero-title"><span>让身体的变化，</span><span class="hl">看得见、读得懂、</span><span>管得住。</span></h1>
+      <p class="hero-sub">通过智能穿戴、体检报告和 AI 健康助手，把分散的身体信号整合成个人健康趋势，让日常健康管理更简单、更有方向。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#trial">开始体验<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a>
+        <a class="btn btn-ghost btn-lg" href="#product">了解产品</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hv-stage" aria-hidden="true">
+        <div class="hv-ring"></div><div class="hv-ring r2"></div>
+        <div class="hv-halo"></div>
+        <img class="hv-ip" src="assets/ip.webp" alt="" loading="eager">
+      </div>
+      <p class="hv-chip hv-chip-a"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12H7l2-4.5 4 9 2-4.5h5.5"/></svg><span><b>睡眠与恢复</b> · 趋势有迹可循</span></p>
+      <p class="hv-chip hv-chip-b"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4v13H7Z M14 3.5v4h4"/></svg><span><b>体检报告</b> · 逐项读得懂</span></p>
+      <p class="hv-chip hv-chip-c"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.5M12 16h.01"/></svg><span>界面数值均为<b>演示数据</b></span></p>
+      <div class="hv-phone">
+        <div class="phone">
+          <div class="phone-screen"><img src="assets/shots/home.webp" alt="免疫卫士 App 首页工作台真实界面截图（演示账号数据）" loading="lazy"></div>
         </div>
-        <ul class="trust">
-          <li>
-            <svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12H7l2-4.5 4 9 2-4.5h5.5"/></svg>
-            连续监测
-          </li>
-          <li>
-            <svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4v13H7Z M14 3.5v4h4 M9.5 12h6 M9.5 15.5h4"/></svg>
-            报告解读
-          </li>
-          <li>
-            <svg class="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M15.5 8.5l-1.9 5.1-5.1 1.9 1.9-5.1Z"/></svg>
-            行动建议
-          </li>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 30 秒认识：是什么 / 适合谁 / 解决什么 ===== -->
+<section class="section section-tint" id="intro" aria-labelledby="intro-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">30 秒认识免疫卫士</p>
+      <h2 id="intro-title">一个把「身体信号」翻译成「下一步做什么」的健康管理平台</h2>
+      <p class="section-sub">免疫卫士是生命方程旗下的个人免疫健康管理产品。它把三类原本分散的信息放在一起看：穿戴设备每天的记录、体检报告里的检验指标、以及你和 AI 健康助手小卫的日常对话。</p>
+    </header>
+    <div class="flow">
+      <article class="flow-step reveal">
+        <span class="step-tag">采集</span>
+        <span class="card-icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <h3>戴上就好，自动记录</h3>
+        <p>智能戒指夜间连续记录心率、HRV、血氧、皮温与睡眠。数据由设备真实采集并同步，不需要每天手动填写。</p>
+      </article>
+      <article class="flow-step reveal">
+        <span class="step-tag">理解</span>
+        <span class="card-icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4v13H7Z M14 3.5v4h4 M9.5 13.5 11.5 15.5 15 11"/></svg></span>
+        <h3>拍张体检单，逐项讲清楚</h3>
+        <p>OCR 识别后由你核对确认，AI 再逐项解释：这个指标是什么、为什么值得关注、数据来自哪里、哪些结论有局限。</p>
+      </article>
+      <article class="flow-step reveal">
+        <span class="step-tag">行动</span>
+        <span class="card-icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M4.5 17.5H10a4 4 0 0 0 4-4v-3a4 4 0 0 1 4-4h1.5 M17 3.5 20 6.5 17 9.5"/></svg></span>
+        <h3>每天 1–2 件值得做的事</h3>
+        <p>小卫根据你的数据生成轻量行动建议。完成行动获得活力积分，帮助你把健康行为变成可持续的习惯。</p>
+      </article>
+    </div>
+    <p class="small muted reveal" style="margin-top:22px;display:flex;gap:8px;align-items:flex-start;max-width:820px"><svg class="ic" viewBox="0 0 24 24" style="width:18px;height:18px;margin-top:3px;flex:none;color:var(--green-ink)" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>免疫卫士是健康管理工具，不是医疗诊断系统。已确诊疾病、正在接受免疫抑制治疗、孕产妇及其他特殊人群，不能直接套用普通用户的研究性综合评分，应遵循医生指导。</p>
+  </div>
+</section>
+
+<!-- ===== 核心理念 ===== -->
+<section class="section" id="philosophy" aria-labelledby="philosophy-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 id="philosophy-title">我们相信的五件事</h2>
+      <p class="section-sub">这些理念决定了免疫卫士「做什么」，也决定了它「刻意不做什么」。</p>
+    </header>
+    <div class="idea-list reveal">
+      <article class="idea"><span class="idea-no">01</span><h3>从一次体检，走向长期管理</h3><p>传统体检只给出某个时间点的结果。免疫卫士把体检报告、穿戴设备和日常健康记录结合起来，让你看到更完整的变化。</p></article>
+      <article class="idea"><span class="idea-no">02</span><h3>数据不是答案，理解才有价值</h3><p>不只是告诉您指标正常或异常，而是帮助你理解：这个指标是什么、为什么值得关注、数据来自哪里、哪些结论存在局限、下一步可以做什么。</p></article>
+      <article class="idea"><span class="idea-no">03</span><h3>健康管理不应该成为负担</h3><p>尽量利用穿戴设备自动采集，减少重复填写。用轻量化任务代替复杂的健康管理表格。</p></article>
+      <article class="idea"><span class="idea-no">04</span><h3>健康是一种长期成长</h3><p>通过活力积分、任务、徽章和好友挑战，让健康行为更有持续性。积分只记录行动，不改变任何健康评分。</p></article>
+      <article class="idea"><span class="idea-no">05</span><h3>AI 是助手，不是医生</h3><p>AI 帮助整理资料、解释指标、追踪变化和形成行动建议，但不代替医生诊断和治疗。遇到持续不适，请及时就医。</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 用户画像 ===== -->
+<section class="section section-tint" id="personas" aria-labelledby="personas-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 id="personas-title">谁适合使用免疫卫士</h2>
+      <p class="section-sub">主要服务 20–40 岁城市办公人群，女性优先。长时间用电脑、久坐、睡眠不规律、有体检报告却不太理解其中的指标。下面四个典型场景，是设计产品时的出发点。</p>
+    </header>
+    <div class="grid grid-4">
+      <article class="persona reveal" style="--pc:#4C8FE0">
+        <div class="persona-head"><span class="persona-av" aria-hidden="true">A</span><div><h3>忙碌的职场人</h3><p class="role">28 岁 · 每天工作 9–10 小时</p></div></div>
+        <dl>
+          <div><dt>生活状态</dt><dd>经常坐在电脑前，睡觉时间不固定，很少主动记录身体状态。</dd></div>
+          <div><dt>想知道</dt><dd>睡眠、活动和生理指标是否出现持续变化。</dd></div>
+          <div><dt>免疫卫士</dt><dd class="help"><b>自动采集</b> + 趋势分析 + 轻量健康任务，不增加记录负担。</dd></div>
+        </dl>
+      </article>
+      <article class="persona reveal" style="--pc:#8B7CF6">
+        <div class="persona-head"><span class="persona-av" aria-hidden="true">B</span><div><h3>关注自身的年轻女性</h3><p class="role">32 岁 · 定期体检</p></div></div>
+        <dl>
+          <div><dt>生活状态</dt><dd>重视健康和生活质量，对身体变化较敏感，希望建立更规律的生活方式。</dd></div>
+          <div><dt>想知道</dt><dd>如何读懂体检报告，把日常健康数据管起来。</dd></div>
+          <div><dt>免疫卫士</dt><dd class="help"><b>AI 报告解读</b> + 个人档案 + 健康趋势 + 行动计划。</dd></div>
+        </dl>
+      </article>
+      <article class="persona reveal" style="--pc:#F59E0B">
+        <div class="persona-head"><span class="persona-av" aria-hidden="true">C</span><div><h3>体检报告看不懂的人</h3><p class="role">35 岁 · 报告上有多个箭头</p></div></div>
+        <dl>
+          <div><dt>生活状态</dt><dd>不知道哪些异常值得关注，在网上搜索后容易产生不必要的焦虑。</dd></div>
+          <div><dt>想知道</dt><dd>获得清晰、可信、有来源的指标解释。</dd></div>
+          <div><dt>免疫卫士</dt><dd class="help"><b>拍照上传</b> → OCR 识别 → 你核对确认 → AI 逐项解释。</dd></div>
+        </dl>
+      </article>
+      <article class="persona reveal" style="--pc:#10B981">
+        <div class="persona-head"><span class="persona-av" aria-hidden="true">D</span><div><h3>喜欢智能设备的人</h3><p class="role">26 岁 · 用智能戒指或手环</p></div></div>
+        <dl>
+          <div><dt>生活状态</dt><dd>关注 HRV、睡眠、心率，喜欢数据可视化，希望健康数据形成长期档案。</dd></div>
+          <div><dt>想知道</dt><dd>不同来源的数据能不能统一管理。</dd></div>
+          <div><dt>免疫卫士</dt><dd class="help"><b>设备连接</b> + 数据整合 + 趋势分析 + 个人健康档案。</dd></div>
+        </dl>
+      </article>
+    </div>
+    <p class="tiny reveal" style="margin-top:18px">以上为典型用户场景描述，用于说明产品设计思路，不是临床研究人群数据或用户调研统计。</p>
+  </div>
+</section>
+
+<!-- ===== 采读转闭环（保留 v1 骨架） ===== -->
+<section class="section" id="product" aria-labelledby="product-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 id="product-title">它和普通健康记录 App 有什么不同</h2>
+      <p class="section-sub">大多数健康 App 停在「记录」。免疫卫士把采集、理解、行动三件事连成一个闭环，并且清楚标出每一步数据的来源与局限。</p>
+    </header>
+    <div class="compare reveal">
+      <div class="compare-col old">
+        <h3>传统体检 / 健康记录</h3>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>只反映某个时间点，报告之间缺少连续性</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>指标旁边只有箭头，没有解释和来源</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>依赖手动填写，很难坚持</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg>看到异常后不知道下一步做什么</li>
         </ul>
       </div>
-
-      <div class="hero-visual">
-        <div class="hero-stage">
-          <div class="hero-ring" aria-hidden="true"></div>
-          <div class="hero-halo" aria-hidden="true"></div>
-          <div class="hero-float-avatar">
-            <img class="hero-avatar" src="assets/ip.png" alt="免疫卫士品牌角色：头戴叶片披风、手持发光盾牌的浅绿色小卫士" width="420" height="420" decoding="async">
-          </div>
-          <p class="hero-chip hero-chip-left">
-            <svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14.2A8 8 0 1 1 9.8 5 6.5 6.5 0 0 0 19 14.2Z"/></svg>
-            今晚 23:40 开始采集
-          </p>
-          <p class="hero-chip hero-chip-bottom">
-            <svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M8.5 12.5 11 15l4.8-5.2"/></svg>
-            连续 7 天有记录
-          </p>
-          <div class="hero-float-phone">
-            <div class="phone-card" role="group" aria-label="免疫评分示例界面">
-              <p class="phone-date">今日</p>
-              <div class="phone-score">
-                <span class="score-num">86</span>
-                <span class="score-pill">免疫评分</span>
-              </div>
-              <ul class="phone-metrics">
-                <li>
-                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12Q5.25 5 7.5 12T12 12T16.5 12T21 12"/></svg>
-                  <span class="m-name">HRV</span>
-                  <span class="m-val">62<span class="m-unit">ms</span></span>
-                </li>
-                <li>
-                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19.5C8 16.6 5.5 13.9 5.5 10.8 5.5 8.7 7.1 7 9.1 7c1.2 0 2.3.6 2.9 1.6.6-1 1.7-1.6 2.9-1.6 2 0 3.6 1.7 3.6 3.8 0 3.1-2.5 5.8-6.5 8.7Z"/></svg>
-                  <span class="m-name">静息心率</span>
-                  <span class="m-val">58<span class="m-unit">bpm</span></span>
-                </li>
-                <li>
-                  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14.2A8 8 0 1 1 9.8 5 6.5 6.5 0 0 0 19 14.2Z"/></svg>
-                  <span class="m-name">深睡</span>
-                  <span class="m-val">1h42m</span>
-                </li>
-              </ul>
-              <svg class="phone-chart" viewBox="0 0 236 72" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-                <defs>
-                  <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0" stop-color="#10B981" stop-opacity=".18"/>
-                    <stop offset="1" stop-color="#10B981" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M4 46 40 38 76 44 112 30 148 36 184 22 228 14v56H4Z" fill="url(#chartFill)"/>
-                <path d="M4 46 40 38 76 44 112 30 148 36 184 22 228 14" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="228" cy="14" r="2" fill="#10B981"/>
-              </svg>
-              <span class="phone-btn" aria-hidden="true">查看报告</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 段 2 · 采读转闭环 ============ -->
-  <section class="section" id="product" aria-labelledby="product-title">
-    <div class="container">
-      <header class="section-head reveal">
-        <h2 id="product-title">一枚戒指，三件事做成闭环</h2>
-        <p class="section-sub">不是又一个健康记录工具。采集、解读、下一步，三件事连在一起。</p>
-      </header>
-      <div class="cards-3">
-        <article class="card reveal">
-          <span class="card-icon" aria-hidden="true">
-            <svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="3"/></svg>
-          </span>
-          <h3>采 · 无感连续采集</h3>
-          <p>夜间佩戴，连续记录心率、血氧、皮温与 HRV。不需要你打卡。</p>
-          <span class="card-no">01</span>
-        </article>
-        <article class="card reveal">
-          <span class="card-icon" aria-hidden="true">
-            <svg class="ic" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4v13H7Z M14 3.5v4h4 M9.5 13.5 11.5 15.5 15 11"/></svg>
-          </span>
-          <h3>读 · 报告看得懂</h3>
-          <p>拍下体检单，AI 识别指标并逐条解释：哪些正常、哪些要关注、下一步做什么。</p>
-          <span class="card-no">02</span>
-        </article>
-        <article class="card reveal">
-          <span class="card-icon" aria-hidden="true">
-            <svg class="ic" viewBox="0 0 24 24"><path d="M4.5 17.5H10a4 4 0 0 0 4-4v-3a4 4 0 0 1 4-4h1.5 M17 3.5 20 6.5 17 9.5"/></svg>
-          </span>
-          <h3>转 · 给出下一步</h3>
-          <p>指标提示风险时，引导至更早期的专业检测，由合作检测机构承接。</p>
-          <span class="card-no">03</span>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 段 3 · 硬件 ============ -->
-  <section class="section section-tinted" id="hardware" aria-labelledby="hardware-title">
-    <div class="container hardware-grid">
-      <div class="hardware-copy reveal">
-        <h2 id="hardware-title">硬件是入口，不是负担</h2>
-        <p>戒指形态，以夜间采集为主。没有屏幕，也不需要用一张报表逼你每天盯着看。</p>
-        <ul class="hw-points">
-          <li><span class="hw-dot" aria-hidden="true"></span><span><b>整夜佩戴</b>以睡眠时段为主，白天不需要刻意操作。</span></li>
-          <li><span class="hw-dot" aria-hidden="true"></span><span><b>无屏设计</b>不制造新的通知，不争抢你的注意力。</span></li>
-          <li><span class="hw-dot" aria-hidden="true"></span><span><b>四项指标</b>心率、血氧、皮温、HRV 连续记录。</span></li>
+      <div class="compare-col new">
+        <h3>免疫卫士</h3>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>戒指每日采集 + 报告按日期入库，看到长期趋势与个人基线</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>每个指标都有名称、单位、原始参考区间与关注事项</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>设备自动同步，只有报告需要你核对一次</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>小卫每天给出 1–2 条行动，积分帮你坚持</li>
         </ul>
       </div>
-      <div class="hardware-visual reveal">
-        <div class="ring-card">
-          <svg class="ring-svg" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-            <defs>
-              <linearGradient id="ringBody" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#D9F7EA"/>
-                <stop offset=".5" stop-color="#B9F0DA"/>
-                <stop offset="1" stop-color="#8FE8CB"/>
-              </linearGradient>
-            </defs>
-            <circle cx="100" cy="100" r="96" fill="rgba(16,185,129,.05)"/>
-            <path fill-rule="evenodd" fill="url(#ringBody)" d="M100 22a78 78 0 1 0 0 156 78 78 0 0 0 0-156Zm0 46a32 32 0 1 1 0 64 32 32 0 0 1 0-64Z"/>
-            <circle cx="100" cy="100" r="32" fill="none" stroke="rgba(5,105,60,.18)" stroke-width="1.5"/>
-            <circle cx="100" cy="100" r="78" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1"/>
-            <path d="M52 62A60 60 0 0 1 118 30" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="100" cy="68" r="7" fill="#10B981" opacity=".92"/>
-          </svg>
-          <ul class="ring-metrics">
-            <li>心率</li>
-            <li>血氧</li>
-            <li>皮温</li>
-            <li>HRV</li>
-          </ul>
-        </div>
-        <p class="hardware-note">具体硬件参数以实物为准。</p>
+    </div>
+    <p class="section-link reveal"><a class="link-more" href="features.html">查看完整产品功能<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ===== 两套分值 ===== -->
+<section class="section section-tint" id="scores" aria-labelledby="scores-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">两套独立分值</p>
+      <h2 id="scores-title">一个反映身体信号，一个记录你的行动</h2>
+      <p class="section-sub">免疫卫士里有两个容易混淆的数字。它们互不影响：<em style="font-style:normal;color:var(--green-ink)">免疫状态分</em>只反映数据趋势，<em style="font-style:normal;color:var(--lilac-ink)">活力积分</em>只记录你做了什么。做任务不会让状态分变好，状态分低也不会扣积分。</p>
+    </header>
+    <div class="dual reveal">
+      <article class="dual-card dual-score">
+        <p class="dk">免疫状态分</p>
+        <h3>身体信号的趋势参考</h3>
+        <p class="en">Immune Status Score · 0–100</p>
+        <p class="dv">82<small>/ 100</small></p>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>由睡眠、活动、生理指标等多类数据综合计算，反映一段时间内的趋势</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>数据不足或可信度不够时，App 会直接不显示分数，而不是给一个假数</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>它是健康管理的参考，不是医学诊断结论</li>
+        </ul>
+        <p class="dv-note">图示数值为演示数据，不代表任何真实用户。</p>
+        <p class="section-link" style="margin-top:16px"><a class="link-more" href="growth.html#score" style="color:#A7F3D0">了解状态分怎么算<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+      </article>
+      <article class="dual-card dual-vp">
+        <p class="dk">活力积分</p>
+        <h3>记录你完成的健康行动</h3>
+        <p class="en">Vitality Points · 只增不因状态分变化</p>
+        <p class="dv">386<small>VP</small></p>
+        <p class="dv-note" style="margin-top:14px">示例：完成「今晚 23:30 前上床」+20 VP</p>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>完成每日任务、数据补全、科普学习获得，只与行动有关</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>用于解锁等级和徽章，排行榜只比较积分，不显示任何健康数据</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>服务端接口目前处于内测阶段，页面中的数值仅为示意</li>
+        </ul>
+        <p class="dv-note">图示数值为演示数据，不代表任何真实用户。</p>
+        <p class="section-link" style="margin-top:16px"><a class="link-more" href="growth.html#vp" style="color:#DDD6FE">了解积分怎么获得<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+      </article>
+      <p class="dual-vs reveal">两套分值<b>独立计算、互不换算</b>。<a href="growth.html" class="link-more" style="font-size:14px;margin-left:6px">进入健康成长中心<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 功能速览 ===== -->
+<section class="section" id="features" aria-labelledby="features-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">核心功能</p>
+      <h2 id="features-title">每个功能都标明它现在处于什么阶段</h2>
+      <p class="section-sub">我们不在官网上把「规划中」说成「已上线」。下面每一项都按 App 的真实实现标注：<span class="tag tag-live">已上线</span> <span class="tag tag-beta">内测中</span> <span class="tag tag-plan">即将推出</span></p>
+    </header>
+    <div class="feat-grid">
+      <a class="feat reveal" href="features.html#workbench"><span class="card-icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M7.5 9.5h4M7.5 13h7"/></svg></span><div><h3>健康工作台</h3><p>状态分、四类信号与今日行动，一屏看清。<br><span class="tag tag-live">已上线</span></p></div></a>
+      <a class="feat reveal" href="features.html#assistant"><span class="card-icon lilac" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M5 6.5h14v9H10l-4 3v-3H5z"/><path d="M9 10h6M9 12.5h3"/></svg></span><div><h3>AI 助手小卫</h3><p>结合你的资料回答，支持语音和附件。<br><span class="tag tag-live">已上线</span></p></div></a>
+      <a class="feat reveal" href="features.html#report"><span class="card-icon mist" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4v13H7Z M14 3.5v4h4 M9.5 13.5h5M9.5 16.5h5"/></svg></span><div><h3>体检报告解读</h3><p>拍照识别，你先核对，AI 再逐项解释。<br><span class="tag tag-live">已上线</span></p></div></a>
+      <a class="feat reveal" href="features.html#trends"><span class="card-icon amber" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M4 19.5h16M5 15l4-5 3.5 3L19 6"/></svg></span><div><h3>健康趋势</h3><p>7 天与 30 天变化，标出数据来源和缺口。<br><span class="tag tag-live">已上线</span></p></div></a>
+      <a class="feat reveal" href="features.html#devices"><span class="card-icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="13" r="5.5"/><path d="M9.5 3.5h5l-.6 4M9.5 18.5h5l-.6-4"/></svg></span><div><h3>智能设备</h3><p>免疫卫士 Ring 已稳定；华为手环内测中。<br><span class="tag tag-live">戒指</span> <span class="tag tag-beta">华为手环</span></p></div></a>
+      <a class="feat reveal" href="features.html#privacy"><span class="card-icon mist" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4.5 18.5 6.7V11c0 4.6-2.6 7.8-6.5 9.5C8.1 18.8 5.5 15.6 5.5 11V6.7Z M9.5 11.5 11.5 13.5 15 10"/></svg></span><div><h3>隐私与授权</h3><p>六类用途逐项授权，可随时撤回。<br><span class="tag tag-live">已上线</span></p></div></a>
+    </div>
+    <p class="section-link reveal"><a class="link-more" href="features.html">查看全部 9 项功能与真实界面<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ===== 新手指南入口 ===== -->
+<section class="section section-tint" id="guide" aria-labelledby="guide-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="kicker">新手指南</p>
+      <h2 id="guide-title">从下载到读懂第一份报告，只需要七步</h2>
+      <p class="section-sub">每一步都有真实界面截图和注意事项。卡在哪一步，直接点进去看那一步。</p>
+    </header>
+    <ol class="steps reveal" style="grid-template-columns:repeat(3,minmax(0,1fr));display:grid">
+      <li class="step" style="padding-top:20px"><h4><a href="guide.html#t1">第一次打开</a></h4><p>下载安装、注册登录、完成基础信息。</p></li>
+      <li class="step"><h4><a href="guide.html#t2">连接智能戒指</a></h4><p>蓝牙配对与权限，第一次同步数据。</p></li>
+      <li class="step"><h4><a href="guide.html#t3">上传体检报告</a></h4><p>拍照 → OCR 识别 → 你核对确认 → AI 解读。</p></li>
+      <li class="step"><h4><a href="guide.html#t4">和小卫对话</a></h4><p>问什么、怎么问，附示例问题。</p></li>
+      <li class="step"><h4><a href="guide.html#t5">看懂趋势</a></h4><p>个人基线、数据来源与缺口标记。</p></li>
+      <li class="step"><h4><a href="guide.html#t6">每日任务与积分</a></h4><p>完成任务、获得积分，不改变状态分。</p></li>
+      <li class="step"><h4><a href="guide.html#t7">管理隐私授权</a></h4><p>六类用途逐项开关，随时撤回。</p></li>
+    </ol>
+    <p class="section-link reveal"><a class="link-more" href="guide.html">进入完整新手指南<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+  </div>
+</section>
+
+<!-- ===== 预约体验 ===== -->
+<section class="section" id="trial" aria-labelledby="trial-title">
+  <div class="container">
+    <div class="trial reveal">
+      <div class="trial-copy">
+        <p class="kicker" style="color:#A7F3D0">预约体验</p>
+        <h2 id="trial-title">想先看看适不适合自己？</h2>
+        <p>留下联系方式，我们会安排一次 20 分钟的线上演示：用演示账号走一遍完整流程，你可以带着自己的体检报告来问。</p>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>演示使用演示数据，不需要你提供任何真实健康信息</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>不会向你推销硬件，也不会把你的信息转给第三方</li>
+        </ul>
+      </div>
+      <div class="trial-form">
+        <h3>预约 20 分钟演示</h3>
+        <form class="form" id="trial-form" novalidate>
+          <div class="form-row">
+            <div class="field"><label for="f-name">姓名或称呼</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="怎么称呼你" required><p class="err">请填写称呼</p></div>
+            <div class="field"><label for="f-contact">手机号或邮箱</label><input id="f-contact" name="contact" type="text" inputmode="email" autocomplete="email" placeholder="用于联系你确认时间" required><p class="err">请填写有效的手机号或邮箱</p></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="f-interest">最感兴趣的功能</label><select id="f-interest" name="interest"><option>体检报告解读</option><option>智能戒指数据与趋势</option><option>AI 健康助手</option><option>健康任务与积分</option><option>团队 / 企业健康方案</option></select></div>
+            <div class="field"><label for="f-device">是否已有智能戒指</label><select id="f-device" name="device"><option>还没有</option><option>已有免疫卫士 Ring</option><option>有其他品牌戒指</option></select></div>
+          </div>
+          <div class="field"><label for="f-time">期望时间（可选）</label><input id="f-time" name="time" type="text" placeholder="例如：工作日晚上、周末上午"></div>
+          <div class="field" style="gap:10px"><label for="f-consent" style="display:flex;gap:10px;align-items:flex-start;margin:0;font-weight:400;font-size:14px;color:var(--ink-2);cursor:pointer"><input id="f-consent" name="consent" type="checkbox" required style="width:18px;height:18px;margin-top:3px;flex:none;accent-color:#10B981">我同意免疫卫士仅将以上信息用于安排本次演示与联系，不用于其他目的。<span class="err" style="margin-top:0">请先勾选授权</span></label></div>
+          <p class="form-status" id="trial-status" role="status" aria-live="polite"></p>
+          <button class="btn btn-primary" type="submit">提交预约</button>
+          <p class="tiny">演示只使用演示数据。请不要在此填写病历、检验单号等敏感健康信息。信息使用说明见 <a href="legal.html#privacy" style="color:var(--green-ink)">隐私与数据说明</a>。</p>
+        </form>
+        <p class="small muted" style="margin-top:16px">正式服务邮箱与企业合作渠道仍在配置中，<a href="about.html#contact" style="color:var(--green-ink);font-weight:600">关于页</a>已如实说明当前状态，配置完成后会同步开放。</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ============ 段 4 · 报告解读 ============ -->
-  <section class="section" id="report" aria-labelledby="report-title">
-    <div class="container">
-      <header class="section-head reveal">
-        <h2 id="report-title">一份报告，讲清楚三件事</h2>
-        <p class="section-sub">不是给你一堆箭头，而是告诉你下一步做什么。</p>
-      </header>
-      <div class="report-card reveal">
-        <div class="report-row">
-          <div class="report-line">
-            <span class="r-name">低密度脂蛋白 <span class="r-val">3.8 mmol/L</span></span>
-            <span class="r-ref">参考 &lt; 3.4</span>
-            <span class="pill pill-warn">需关注</span>
-          </div>
-          <p class="r-note">略高于参考范围，建议 3 个月后复查，先从饮食与运动调整开始。</p>
-        </div>
-        <div class="report-row">
-          <div class="report-line">
-            <span class="r-name">超敏 C 反应蛋白 <span class="r-val">2.1 mg/L</span></span>
-            <span class="r-ref">参考 &lt; 3.0</span>
-            <span class="pill pill-ok">正常</span>
-          </div>
-          <p class="r-note">处于参考范围内，建议结合 HRV 趋势持续观察。</p>
-        </div>
-        <div class="report-row">
-          <div class="report-line">
-            <span class="r-name">维生素 D <span class="r-val">18 ng/mL</span></span>
-            <span class="r-ref">参考 30–100</span>
-            <span class="pill pill-warn">需关注</span>
-          </div>
-          <p class="r-note">低于参考范围，建议在医生指导下补充并复测。</p>
-        </div>
-        <p class="report-disclaimer">示例数据仅用于说明界面，不构成任何医学建议。</p>
-      </div>
+<!-- ===== 诚信承诺（替代 v1 无法核实的“合作方能力”表述） ===== -->
+<section class="section section-forest" id="promise" aria-labelledby="promise-title">
+  <div class="container">
+    <header class="section-head center reveal">
+      <p class="kicker">我们对内容的承诺</p>
+      <h2 id="promise-title">官网上写的每一句，都能在 App 里找到对应</h2>
+    </header>
+    <div class="grid grid-3">
+      <div class="reveal"><h3 style="color:#fff;font-size:19px">阶段如实标注</h3><p style="margin-top:8px;font-size:15px;line-height:1.75;color:rgba(255,255,255,.82)">功能按真实进度标为「已上线」「内测中」「即将推出」。内测功能会明确提示，不用截图暗示它已经稳定可用。</p></div>
+      <div class="reveal"><h3 style="color:#fff;font-size:19px">数据如实标注</h3><p style="margin-top:8px;font-size:15px;line-height:1.75;color:rgba(255,255,255,.82)">页面上所有分数、心率、HRV、睡眠时长均为演示数据，并逐一标明。没有真实用户数据支撑的数字，不会出现在这里。</p></div>
+      <div class="reveal"><h3 style="color:#fff;font-size:19px">能力如实标注</h3><p style="margin-top:8px;font-size:15px;line-height:1.75;color:rgba(255,255,255,.82)">免疫卫士不提供医学诊断，也不自己开展检测。我们不公布未经核实的用户数量、机构合作或临床成果。</p></div>
     </div>
-  </section>
-
-  <!-- ============ 段 5 · 医学背书 ============ -->
-  <section class="section" id="science" aria-labelledby="science-title">
-    <div class="container">
-      <header class="section-head reveal">
-        <h2 id="science-title">检测能力，来自合作方</h2>
-        <p class="section-sub">免疫卫士不自己做检测。当指标提示需要进一步检查时，由具备资质的第三方检测机构承接，检测项目与价格以机构公示为准。</p>
-      </header>
-      <ul class="points-3">
-        <li class="reveal">
-          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 20 8l-8 4.5L4 8Z M4 12l8 4.5L20 12 M4 16l8 4.5L20 16"/></svg>
-          <h3>多组学检测</h3>
-          <p>基因、代谢、蛋白等多维度检测能力</p>
-        </li>
-        <li class="reveal">
-          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 4.5h15v15h-15Z M12 4.5v15 M4.5 12h15"/></svg>
-          <h3>结构化解读</h3>
-          <p>报告指标统一入库，可追溯、可对比</p>
-        </li>
-        <li class="reveal">
-          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4C7.5 4 4 5.2 4 6.8v10.4C4 18.8 7.5 20 12 20c4.5 0 8-1.2 8-2.8V6.8C20 5.2 16.5 4 12 4Z M4 6.8c0 1.6 3.5 2.8 8 2.8s8-1.2 8-2.8 M4 12c0 1.6 3.5 2.8 8 2.8s8-1.2 8-2.8"/></svg>
-          <h3>数据留存</h3>
-          <p>历史报告与趋势长期保存，随时回看</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ============ 段 6 · CTA ============ -->
-  <section class="section" id="contact" aria-labelledby="contact-title">
-    <div class="container">
-      <div class="cta-box reveal">
-        <h2 id="contact-title">先看懂，再决定</h2>
-        <p class="cta-sub">内测阶段，名额有限。留下联系方式，我们会告诉你下一步怎么做。</p>
-        <button class="btn btn-primary" type="button">预约体验</button>
-        <p class="cta-note">我们不会向你推荐任何未经医生确认的治疗方案。</p>
-      </div>
-    </div>
-  </section>
-
+    <p class="reveal" style="text-align:center;margin-top:36px"><a class="btn btn-ghost" href="science.html" style="background:rgba(255,255,255,.96);border-color:transparent">查看科学依据与医学边界<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+  </div>
+</section>
 </main>
 
-<!-- ============ 页脚 ============ -->
-<footer class="site-footer" id="about">
+<footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <p class="brand">
-          <span class="brand-mark" aria-hidden="true">
-            <svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5 18.5 6.7 V11 C18.5 15.6 15.9 18.8 12 20.5 C8.1 18.8 5.5 15.6 5.5 11 V6.7 Z"/></svg>
-          </span>
-          <span class="brand-name">生命方程 · 免疫卫士</span>
-        </p>
-        <p class="footer-tag">把免疫力变成一条可追踪、可解释、可行动的曲线。</p>
+        <p class="brand"><span class="brand-mark" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4.5 18.5 6.7V11c0 4.6-2.6 7.8-6.5 9.5C8.1 18.8 5.5 15.6 5.5 11V6.7Z"/></svg></span><span class="brand-name">生命方程 · 免疫卫士<small>Immune Guard</small></span></p>
+        <p class="footer-tag">读懂身体信号，管理日常健康，让每一次改变都有迹可循。</p>
       </div>
       <nav class="footer-col" aria-label="产品">
-        <h3>产品</h3>
-        <ul>
-          <li><a href="#product">功能</a></li>
-          <li><a href="#hardware">硬件</a></li>
-          <li><a href="#report">报告解读</a></li>
-        </ul>
+        <h4>产品</h4>
+        <a href="features.html">产品功能</a>
+        <a href="features.html#devices">智能设备</a>
+        <a href="growth.html">健康成长中心</a>
+        <a href="download.html">下载 App</a>
+      </nav>
+      <nav class="footer-col" aria-label="学习">
+        <h4>学习</h4>
+        <a href="guide.html">新手指南</a>
+        <a href="science.html">科学与安全</a>
+        <a href="faq.html">常见问题</a>
       </nav>
       <nav class="footer-col" aria-label="关于">
-        <h3>关于</h3>
-        <ul>
-          <li><a href="#about">团队</a></li>
-          <li><a href="#science">合作</a></li>
-          <li><a href="#contact">联系我们</a></li>
-        </ul>
+        <h4>关于</h4>
+        <a href="about.html">品牌介绍</a>
+        <a href="about.html#team">团队</a>
+        <a href="about.html#partner">合作</a>
+        <a href="index.html#trial">预约体验</a>
+      </nav>
+      <nav class="footer-col" aria-label="法律与隐私">
+        <h4>法律与隐私</h4>
+        <a href="legal.html#privacy">隐私与数据说明</a>
+        <a href="legal.html#policy" class="is-pending" aria-disabled="true">隐私政策</a>
+        <a href="legal.html#terms" class="is-pending" aria-disabled="true">用户协议</a>
+        <a href="legal.html#disclaimer">健康管理免责声明</a>
       </nav>
     </div>
     <div class="footer-bottom">
-      <p class="footer-disclaimer">本产品不提供诊断或治疗建议。所有解读内容仅供参考，不能替代临床诊断。如有不适请及时就医。</p>
+      <p class="footer-disclaimer">免疫卫士是健康管理辅助工具，不是医疗诊断系统。所有解读内容仅供参考，不能替代医生的面诊、诊断与治疗。如有持续不适，请及时就医。</p>
       <div class="footer-meta">
         <span>© 2026 生命方程 · 免疫卫士</span>
-        <span>京ICP备XXXXXXXX号</span>
+        <span id="beian" data-pending="true">备案号待补齐</span>
       </div>
     </div>
   </div>
 </footer>
-
-<script>
-(function () {
-  'use strict';
-  var doc = document;
-  doc.documentElement.classList.add('js');
-  var mReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var OFFSET = 88; /* 吸顶导航高度 + 余量 */
-
-  /* ---------- 移动端菜单：开关 / 遮罩点击 / ESC / 焦点圈 ---------- */
-  var toggle = doc.querySelector('.nav-toggle');
-  var menu = doc.getElementById('mobile-menu');
-
-  function focusables() { return menu.querySelectorAll('a,button'); }
-
-  function openMenu() {
-    if (!menu.hidden) return;
-    menu.hidden = false;
-    toggle.setAttribute('aria-expanded', 'true');
-    toggle.classList.add('is-active');
-    doc.body.classList.add('no-scroll');
-    var first = focusables()[0];
-    if (first) first.focus();
-    doc.addEventListener('keydown', onMenuKey);
-  }
-
-  function closeMenu(refocus) {
-    if (menu.hidden) return;
-    menu.hidden = true;
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.classList.remove('is-active');
-    doc.body.classList.remove('no-scroll');
-    doc.removeEventListener('keydown', onMenuKey);
-    if (refocus !== false) toggle.focus();
-  }
-
-  function onMenuKey(e) {
-    if (e.key === 'Escape') { closeMenu(); return; }
-    if (e.key !== 'Tab') return;
-    var list = focusables();
-    if (!list.length) return;
-    var first = list[0], last = list[list.length - 1];
-    if (e.shiftKey && doc.activeElement === first) { e.preventDefault(); last.focus(); }
-    else if (!e.shiftKey && doc.activeElement === last) { e.preventDefault(); first.focus(); }
-  }
-
-  if (toggle && menu) {
-    toggle.addEventListener('click', function () {
-      if (menu.hidden) { openMenu(); } else { closeMenu(); }
-    });
-    /* 点击遮罩（菜单空白区）关闭 */
-    menu.addEventListener('click', function (e) {
-      if (e.target === menu) closeMenu(false);
-    });
-    /* 视口切回桌面尺寸时自动收起 */
-    var mq = window.matchMedia('(min-width: 640px)');
-    var onMq = function () { if (!menu.hidden) closeMenu(false); };
-    if (mq.addEventListener) mq.addEventListener('change', onMq);
-    else if (mq.addListener) mq.addListener(onMq);
-  }
-
-  /* ---------- 锚点平滑滚动（吸顶导航偏移） ---------- */
-  doc.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      var href = a.getAttribute('href');
-      if (!href || href === '#') { e.preventDefault(); return; }
-      var target = doc.querySelector(href);
-      if (!target) return;
-      e.preventDefault();
-      if (menu && !menu.hidden) closeMenu(false);
-      var top = target.getBoundingClientRect().top + window.pageYOffset - (href === '#top' ? 0 : OFFSET);
-      if (mReduce.matches) { window.scrollTo(0, top); }
-      else { window.scrollTo({ top: top, behavior: 'smooth' }); }
-      target.setAttribute('tabindex', '-1');
-      target.focus({ preventScroll: true });
-    });
-  });
-
-  /* ---------- 滚动淡入（reduced-motion 或无 IO 时全部直接显示） ---------- */
-  var revealEls = [].slice.call(doc.querySelectorAll('.reveal'));
-  function showAll() { revealEls.forEach(function (el) { el.classList.add('is-visible'); }); }
-  if (mReduce.matches || !('IntersectionObserver' in window)) {
-    showAll();
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          en.target.classList.add('is-visible');
-          io.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    revealEls.forEach(function (el) { io.observe(el); });
-  }
-})();
-</script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>

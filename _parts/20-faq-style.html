@@ -1,0 +1,17 @@
+<style>
+/* ===== FAQ 专属 ===== */
+.faq-nav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:8px}
+.faq-nav a{background:#fff;border:1px solid var(--line);border-radius:var(--r-small);padding:14px 12px;text-align:center;font-size:14px;font-weight:600;color:var(--ink);line-height:1.45;transition:border-color .2s,transform .2s var(--ease)}
+.faq-nav a:hover{border-color:var(--green-border);transform:translateY(-2px)}
+.faq-nav a span{display:block;font-size:12px;font-weight:400;color:var(--ink-3);margin-top:3px}
+.faq-group{padding-top:56px}
+.faq-group h2{font-size:26px;font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.faq-group h2 .n{width:34px;height:34px;border-radius:10px;background:var(--green-bg);border:1px solid var(--green-border);color:var(--green-ink);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.faq-group .acc summary{font-size:15.5px;padding:18px 22px}
+.faq-group .acc .acc-body{font-size:15px}
+.qcount{font-size:12.5px;color:var(--ink-4);margin-left:auto}
+@media (max-width:1023px){.faq-nav{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:639px){.faq-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.faq-group{padding-top:40px}.faq-group h2{font-size:21px}.qcount{display:none}}
+</style>
+</head>
+<body>

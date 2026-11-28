@@ -1,0 +1,199 @@
+<main id="main">
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="container">
+    <p class="crumbs"><a href="index.html">首页</a><span>健康成长</span></p>
+    <p class="eyebrow" style="margin-top:18px">健康成长中心</p>
+    <h1 id="page-title">一个看身体，一个看行动</h1>
+    <div class="lead">
+      <p>免疫卫士里有两个数字，很多人第一次看会混淆。它们<b>独立计算、互不换算</b>：免疫状态分反映数据趋势，活力积分记录你做了什么。</p>
+      <p>做任务不会让状态分变高，状态分下降也不会扣你的积分。这个设计是刻意的——我们不希望你为了分数去刷任务。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="score" aria-labelledby="score-title">
+  <div class="container">
+    <header class="section-head">
+      <p class="kicker">第一套分值</p>
+      <h2 id="score-title">免疫状态分</h2>
+      <p class="section-sub">由睡眠、活动、生理指标与恢复四类数据综合计算，取值 0–100，反映一段时间内相对你自身基线的变化。</p>
+    </header>
+    <div class="score-pair">
+      <div class="score-box g">
+        <p class="k">免疫状态分</p>
+        <h3>趋势参考，不是体检结论</h3>
+        <p class="v">82<small>/ 100</small></p>
+        <p class="d">分数越高，说明近期数据整体越接近你的稳定区间。它回答的是「最近是在变好还是变差」，而不是「你有没有病」。</p>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>数据不足时直接不显示分数</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>可信度低于阈值时同样不显示</li>
+        </ul>
+        <p class="d" style="font-size:12.5px;opacity:.7;margin-top:16px">图示数值为演示数据。</p>
+      </div>
+      <div class="score-box v">
+        <p class="k">活力积分</p>
+        <h3>你完成的健康行动</h3>
+        <p class="v">386<small>VP</small></p>
+        <p class="d">完成任务、补全数据、阅读科普都会获得积分。积分只与行动有关，不受任何健康数据影响。</p>
+        <ul>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>用于解锁等级与徽章</li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>排行榜只比积分，不展示健康数据</li>
+        </ul>
+        <p class="d" style="font-size:12.5px;opacity:.7;margin-top:16px">图示数值为演示数据；服务端积分接口仍在配置中。</p>
+      </div>
+    </div>
+    <div class="callout amber" style="margin-top:22px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p><b>状态分的计算规则由服务端统一执行</b>，App 只负责展示。当前版本中，当数据不足或可信度不够时，接口返回的分数为 <code style="font-family:var(--mono);font-size:13.5px">null</code>，页面会显示「暂无法评分」，而不是填一个 0 或平均值。</p></div>
+  </div>
+</section>
+
+<section class="section section-tint" id="vp" aria-labelledby="vp-title">
+  <div class="container">
+    <header class="section-head">
+      <p class="kicker">第二套分值</p>
+      <h2 id="vp-title">活力积分怎么获得</h2>
+      <p class="section-sub">积分只有一个来源：你确实做了某件对健康有益的事。我们不做「登录就送」「看广告翻倍」这类设计。</p>
+    </header>
+    <div class="tbl-wrap rule-tbl">
+      <table class="tbl">
+        <thead><tr><th scope="col">行为类型</th><th scope="col">举例</th><th scope="col">说明</th></tr></thead>
+        <tbody>
+          <tr><td>睡眠</td><td>按建议时间上床</td><td>由设备数据或你的补录确认，不是点一下就算</td></tr>
+          <tr><td>活动</td><td>完成 20 分钟快走</td><td>依赖步数与心率数据，不足时不判定完成</td></tr>
+          <tr><td>久坐中断</td><td>每坐 50 分钟起身活动</td><td>按当日坐姿时长分段计算</td></tr>
+          <tr><td>数据补全</td><td>补录漏掉的睡眠时长</td><td>鼓励把数据补完整，而不是补得好看</td></tr>
+          <tr><td>科普学习</td><td>读完 1 篇免疫科普</td><td>读完才算，中途退出不计</td></tr>
+          <tr><td>复查随访</td><td>确认复查提醒时间</td><td>提醒你按医生建议复查，不评价结果</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sep">
+      <div><b class="yes">积分会做的事</b>累加等级进度、点亮徽章、参与赛季排行榜（仅在你主动开启后）。</div>
+      <div><b class="no">积分不会做的事</b>不改变免疫状态分、不兑换健康结论、不影响任何解读内容的权重。</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="levels" aria-labelledby="levels-title">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="levels-title">5 个等级，6 枚徽章</h2>
+      <p class="section-sub">等级按累计积分推进，徽章按具体行为点亮。徽章不显示排名，也不对外公开。</p>
+    </header>
+    <div class="tbl-wrap" style="margin-bottom:28px">
+      <table class="tbl">
+        <thead><tr><th scope="col">等级</th><th scope="col">所需累计积分</th><th scope="col">含义</th></tr></thead>
+        <tbody>
+          <tr><td>萌芽</td><td>0 VP</td><td>刚开始记录，先建立数据基础</td></tr>
+          <tr><td>探索者</td><td>100 VP</td><td>已经形成初步的记录习惯</td></tr>
+          <tr><td>守护者</td><td>300 VP</td><td>能稳定完成每日行动</td></tr>
+          <tr><td>习惯建筑师</td><td>600 VP</td><td>健康行为进入日常节奏</td></tr>
+          <tr><td>免疫卫士</td><td>1000 VP</td><td>长期坚持，形成自己的管理方法</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="grid grid-3">
+      <article class="card"><span class="card-icon amber" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="m8.5 13.5-1.5 7 5-2.5 5 2.5-1.5-7"/></svg></span><h3>数据侦探</h3><p>完成 1 次数据补全。奖励把数据补完整的动作，而不是数据本身好看。</p></article>
+      <article class="card"><span class="card-icon amber" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg></span><h3>规律睡眠</h3><p>完成睡眠挑战。考察的是连续几天按建议时间上床。</p></article>
+      <article class="card"><span class="card-icon amber" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M7 3.5h7l4 4v13H7Z M14 3.5v4h4 M9.5 10.5h5M9.5 13.5h5"/></svg></span><h3>第一次看懂血检</h3><p>完成 1 次科普学习。读完血常规相关的内容才算。</p></article>
+      <article class="card"><span class="card-icon amber" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M4.5 17.5H10a4 4 0 0 0 4-4v-3a4 4 0 0 1 4-4h1.5"/></svg></span><h3>恢复日也重要</h3><p>完成久坐中断。站起来活动，比一直坐着更值得记录。</p></article>
+      <article class="card"><span class="card-icon amber" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4.5 18.5 6.7V11c0 4.6-2.6 7.8-6.5 9.5C8.1 18.8 5.5 15.6 5.5 11V6.7Z M9.5 11.5 11.5 13.5 15 10"/></svg></span><h3>安全重测专家</h3><p>完成复查随访。按医生建议的时间复查，本身就是一种健康管理。</p></article>
+      <article class="card"><span class="card-icon amber" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.5"/><circle cx="17" cy="10.5" r="2.5"/><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5M15 15.5c2.5 0 4.5 1.6 4.5 4"/></svg></span><h3>团队协作</h3><p>完成当日的全部任务。一个人坚持难，一组人更容易。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="demo" aria-labelledby="demo-title">
+  <div class="container">
+    <header class="section-head">
+      <span class="tag tag-demo" style="margin-bottom:12px">互动演示 · 不连接任何账号</span>
+      <h2 id="demo-title">试一下任务和徽章是怎么回事</h2>
+      <p class="section-sub">下面这个演示完全在你的浏览器里运行，<b>不发送请求、不写 Cookie、不关联任何真实账号</b>。它只用来展示玩法结构，数值与正式版本可能不同。</p>
+    </header>
+
+    <div class="demo" id="vp-demo">
+      <div class="demo-main">
+        <div class="demo-head">
+          <div>
+            <p class="demo-lv">当前等级：<span data-level>探索者</span></p>
+            <p class="demo-vp"><b data-vp>120</b><span>活力积分 VP</span></p>
+          </div>
+          <div class="tags"><span class="tag tag-demo">演示</span></div>
+        </div>
+        <div class="bar" role="progressbar" aria-label="等级进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10"><i data-bar style="width:10%"></i></div>
+        <p class="demo-next"><span data-next>距「守护者」还差 180 VP</span><span data-pct>10%</span></p>
+
+        <div class="ladder" aria-label="等级阶梯">
+          <div class="vp-level is-reached">萌芽</div>
+          <div class="vp-level is-current">探索者</div>
+          <div class="vp-level">守护者</div>
+          <div class="vp-level">习惯建筑师</div>
+          <div class="vp-level">免疫卫士</div>
+        </div>
+
+        <div class="task-list" role="group" aria-label="今日任务（演示）">
+          <button class="vp-task" type="button" data-task="sleep" aria-pressed="false"><span class="t">今晚 23:30 前上床<span class="c">睡眠</span></span><span class="p">+20</span><span class="vp-task-state">待完成</span></button>
+          <button class="vp-task" type="button" data-task="activity" aria-pressed="false"><span class="t">完成 20 分钟快走<span class="c">活动</span></span><span class="p">+15</span><span class="vp-task-state">待完成</span></button>
+          <button class="vp-task" type="button" data-task="sedentary" aria-pressed="false"><span class="t">每坐 50 分钟起身活动<span class="c">久坐中断</span></span><span class="p">+10</span><span class="vp-task-state">待完成</span></button>
+          <button class="vp-task" type="button" data-task="data" aria-pressed="false"><span class="t">补录今天的睡眠时长<span class="c">数据补全</span></span><span class="p">+10</span><span class="vp-task-state">待完成</span></button>
+          <button class="vp-task" type="button" data-task="learn" aria-pressed="false"><span class="t">阅读 1 篇免疫科普<span class="c">科普学习</span></span><span class="p">+10</span><span class="vp-task-state">待完成</span></button>
+          <button class="vp-task" type="button" data-task="followup" aria-pressed="false"><span class="t">确认复查提醒时间<span class="c">复查随访</span></span><span class="p">+15</span><span class="vp-task-state">待完成</span></button>
+        </div>
+      </div>
+
+      <div class="demo-side">
+        <p class="demo-lv" style="color:var(--ink)">徽章墙</p>
+        <p class="small muted" style="margin-top:4px">完成任务后自动点亮。</p>
+        <div class="badge-grid">
+          <div class="vp-badge" data-badge="b1"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m15.5 15.5 4 4"/></svg><b>数据侦探</b><span class="vp-badge-state">未点亮</span></div>
+          <div class="vp-badge" data-badge="b2"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5Z"/></svg><b>规律睡眠</b><span class="vp-badge-state">未点亮</span></div>
+          <div class="vp-badge" data-badge="b3"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4v13H7Z M14 3.5v4h4"/></svg><b>看懂血检</b><span class="vp-badge-state">未点亮</span></div>
+          <div class="vp-badge" data-badge="b4"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 17.5H10a4 4 0 0 0 4-4v-3a4 4 0 0 1 4-4h1.5"/></svg><b>恢复日</b><span class="vp-badge-state">未点亮</span></div>
+          <div class="vp-badge" data-badge="b5"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5 18.5 6.7V11c0 4.6-2.6 7.8-6.5 9.5C8.1 18.8 5.5 15.6 5.5 11V6.7Z"/></svg><b>安全重测</b><span class="vp-badge-state">未点亮</span></div>
+          <div class="vp-badge" data-badge="b6"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="9" r="3.5"/><circle cx="17" cy="10.5" r="2.5"/><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/></svg><b>团队协作</b><span class="vp-badge-state">未点亮</span></div>
+        </div>
+        <div class="season">
+          <p class="sh"><span>28 天赛季进度</span><b><span data-done>0 / 6</span></b></p>
+          <div class="bar" role="progressbar" aria-label="赛季任务完成度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i data-season style="width:0%"></i></div>
+          <p class="small muted" style="margin-top:8px">正式版本中，赛季会记录 28 天内的连续完成情况。</p>
+        </div>
+        <div class="demo-foot">
+          <button class="btn btn-ghost btn-sm" type="button" data-reset>重置演示</button>
+          <span class="tiny">仅演示，无数据留存</span>
+        </div>
+      </div>
+      <div class="toast" data-toast role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="season" aria-labelledby="season-title">
+  <div class="container">
+    <header class="section-head">
+      <div style="display:flex;gap:8px;margin-bottom:12px"><span class="tag tag-beta">内测中</span></div>
+      <h2 id="season-title">28 天赛季与好友小队</h2>
+      <p class="section-sub">一个人坚持很难，一组人容易得多。赛季把目标切成 28 天一段，小队让你和朋友互相看见进度——但只看积分，不看健康数据。</p>
+    </header>
+    <div class="squad">
+      <article class="card"><span class="card-icon" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7.5V12l3 2"/></svg></span><h3>28 天一个赛季</h3><p>每段赛季有独立的完成度统计。赛季结束后进度清零重来，不累积压力，也不追溯既往表现。</p></article>
+      <article class="card"><span class="card-icon mist" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.5"/><circle cx="17" cy="10.5" r="2.5"/><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/></svg></span><h3>好友小队</h3><p>可以组队查看彼此积分进度。小队内不展示任何健康数据、检验值或疾病信息。</p></article>
+    </div>
+    <div class="callout mist" style="margin-top:22px"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><p><b>当前状态说明：</b>赛季、活力积分与好友小队的客户端界面已完成，但服务端相关接口还在配置中，暂时无法在正式环境使用。上面的互动演示是纯前端模拟，用来展示玩法结构。</p></div>
+  </div>
+</section>
+
+<section class="section section-tint" id="fair" aria-labelledby="fair-title">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="fair-title">排行榜只比积分，且必须你主动开启</h2>
+      <p class="section-sub">健康数据是隐私。排行榜默认关闭，开启后也只展示积分和昵称——这是硬性规则，不是可配置项。</p>
+    </header>
+    <div class="privacy-rules">
+      <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>只展示：</b>昵称、活力积分、等级、徽章数量</span></div>
+      <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>永不展示：</b>免疫状态分、检验值、疾病名称、报告原文</span></div>
+      <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>默认状态：</b>关闭。需要你手动开启才会参与</span></div>
+      <div><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span><b>随时关闭：</b>关闭后立即从榜单移除，不保留历史名次</span></div>
+    </div>
+    <p class="section-link"><a class="link-more" href="legal.html">查看隐私与数据说明<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12h14M13.5 6.5 19 12l-5.5 5.5"/></svg></a></p>
+  </div>
+</section>
+</main>

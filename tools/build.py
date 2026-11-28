@@ -48,7 +48,7 @@ PAGES = {
                         '30-index-main1.html', '40-index-main2.html', '90-foot.html']},
     'download': {'meta': dict(path='download.html',
         title='下载免疫卫士 Android 版｜生命方程 · 免疫卫士',
-        desc='下载免疫卫士 Android 版（v0.9.0）。页面实时读取最新版本号、安装包大小与 SHA-256 校验值，附系统要求、安装步骤与版本更新记录。iOS 版本尚未发布。',
+        desc='下载免疫卫士 Android 版（v0.10.0）。页面实时读取最新版本号、安装包大小与 SHA-256 校验值，附系统要求、安装步骤与版本更新记录。iOS 版本尚未发布。',
         kw='免疫卫士下载,免疫卫士APK,健康管理App下载,Android健康App',
         og_title='下载免疫卫士 Android 版'), 'parts': ['20-download-style.html', '10-nav.html', '30-download-main.html', '50-download-script.html', '90-foot.html']},
     'features': {'meta': dict(path='features.html',
